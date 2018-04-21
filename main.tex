@@ -1,0 +1,33 @@
+\documentclass[12pt, a4paper]{ctexbook}
+
+\title{概率论笔记}
+\author{c0ldcat}
+\date{\today}
+
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+
+\newcommand{\vectornum}[2]{\left(\begin{matrix}{#1}\\{#2}\end{matrix}\right)}
+\newcommand{\smallvectornum}[2]{\left(\begin{smallmatrix}{#1}\\{#2}\end{smallmatrix}\right)}
+
+\newcounter{thm}[section]
+\renewcommand\thethm{\thesection.\arabic{thm}}
+\theoremstyle{definition} \newtheorem{define}[thm]{定义}
+\newtheorem{mthm}[thm]{定理}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+
+\mainmatter{}
+\subfile{basic-concept.tex}
+
+\end{document}
