@@ -1,3 +1,114 @@
 \documentclass[main.tex]{subfiles}
 \begin{document}
+\chapter{多元函数微分}
+
+\section{多元函数的基本概念}
+\subsection{平面点集}
+\paragraph{邻域} $U(P_0, \delta) = \{ P \mid |P P_0| < \delta \}$
+\subparagraph{去心邻域} $\mathring{U}(P_0, \delta) = \{ P \mid 0 < |P P_0| < \delta \}$
+\subparagraph{领域描述点与点集关系}\figref{点与点集关系}
+\begin{figure}[htp]
+    \centering
+    \psscalebox{0.75}{\begin{pspicture*}(-3,-5)(3,3)\pscircle[linewidth=2pt,linestyle=dashed,dash=1pt 1pt,fillcolor=black,fillstyle=solid,opacity=0.16](1.88466,1.50033){0.83489}\pscircle[linewidth=2pt,linestyle=dashed,dash=1pt 1pt,fillcolor=black,fillstyle=solid,opacity=0.16](0.32207,-0.55827){0.78091}\pscircle[linewidth=2pt,linestyle=dashed,dash=1pt 1pt,fillcolor=black,fillstyle=solid,opacity=0.16](2.27518,-2.21389){0.71610}\rput{60.73200}(-0.16,-0.25){\psellipse[linewidth=2pt](0,0)(2.86614,1.96518)}\begin{scriptsize}\psdots[dotstyle=*](1.88466,1.50033)\rput[bl](1.91967,1.58952){$P_3$}\psdots[dotstyle=*](0.32207,-0.55827)\rput[bl](0.36154,-0.46310){$P_1$}\psdots[dotstyle=*](2.27518,-2.21389)\rput[bl](2.31154,-2.12387){$P_2$}\end{scriptsize}\end{pspicture*}}
+    \caption{点与点集关系}\label{点与点集关系}
+\end{figure}
+\begin{itemize}
+    \item 内点: $P_1$
+    \item 外点: $P_2$
+    \item 边界点: $P_3$
+    \item[-] 聚点: $\forall \delta > 0, \mathring{U}(P_0, \delta) \text{内有} E \text{中点}$
+\end{itemize}
+\paragraph{平面点集合分类}
+\begin{itemize}
+    \item 开集:
+        \inlineps{\pscircle[linewidth=1pt,linestyle=dashed,dash=5pt 2pt,fillcolor=black,fillstyle=solid,opacity=0.33](0,0){1}}
+    \item 闭集:
+        \inlineps{\pscircle[linewidth=1pt,linestyle=solid,fillcolor=black,fillstyle=solid,opacity=0.33](0,0){1}}
+    \item 连通集:
+        \inlineps{\rput{90}(-0.43011,0.07747){\psellipse[linewidth=1pt,fillcolor=black,fillstyle=solid,opacity=0.27](0,0)(0.34095,0.22741)}\rput{65.44954}(0.51130,0.14720){\psellipse[linewidth=1pt,fillcolor=black,fillstyle=solid,opacity=0.23](0,0)(0.59639,0.39867)}}
+        不是连通集
+        \begin{itemize}
+            \item 区域 (开区域): 连通开集
+            \item 闭区域: 连通闭集
+        \end{itemize}
+    \item 有界集
+    \item 无界集
+\end{itemize}
+
+\subsection{多元函数概念}
+\paragraph{极限} $P_0(x_0, y_0) \text{是} D \text{的聚点}\ \exists A\ \forall \varepsilon\ P \in D \cap \mathring{U}(P_0, \delta)\ |f(P) - A| = |f(x,y) - A| < \delta$
+\paragraph{连续} $P_0(x_0, y_0) \text{是} D \text{的聚点}\ \lim_{(x, y)\rightarrow(x_0, y_0)} f(x, y) = f(x_0, y_0)$
+\begin{itemize}
+    \item 间断点
+\end{itemize}
+\subparagraph{有界连续多元函数点性质}
+\begin{itemize}
+    \item 具有最大最小值
+    \item 介值定理
+    \item 一致连续性: 各个二维切面上都连续
+\end{itemize}
+
+\section{偏导数}
+\paragraph{偏导数基础}
+\[ \left. \frac{\partial f}{\partial x} \right|_{\begin{smallmatrix}x = x_0\\y = y_0\end{smallmatrix}} = f_x(x_0, y_0) \]
+\subparagraph{计算方法} 把其他自变量看做常数
+\paragraph{高阶偏导数}
+    高阶混合偏导数中偏导数连续点条件下与求导次序无关
+\subparagraph{拉普拉斯方程?} (P71)
+
+\section{全微分}
+\paragraph{偏增量和偏微分}
+\[ f(x + \Delta x, y) - f(x, y) \approx f_x(x, y) \Delta x \]
+左端是对x\uwave{偏增量}, 右端是对x\uwave{偏微分}
+\paragraph{全增量}
+$\Delta z = f (x + \Delta x, y + \Delta y) - f(x, y)$
+\paragraph{可微与全微分}
+\underline{全方向切线在同一平面}\\
+若全增量$\Delta z$可表示为: $\Delta z = A \Delta x + B \Delta y + o(\rho)$
+其中$A$, $B$仅与$x$, $y$有关, $\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$,
+那么称$z = f(x, y)$在$(x, y)$\uwave{可微分}\\
+$dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
+\paragraph{(全)可微与(偏)可导的关系}
+\begin{mthm*}[可微一定可导]
+如果$z = f(x, y)$在点$(x, y)$可微, 那么该函数在点$(x, y)$点偏导数$\frac{\partial z}{\partial x}$与$\frac{\partial z}{\partial x}$必定存在,
+且全微分为
+\begin{equation}
+    dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial x} dy \tag{全微分}
+\end{equation}
+又称\underline{叠加原理}
+\end{mthm*}
+\begin{mthm*}[可导不一定可微]
+    函数$z = f(x, y)$的偏导数$\frac{\partial z}{\partial x}$, $\frac{\partial z}{\partial y}$在点$(x, y)$连续, 那么该函数在该点可微分
+\end{mthm*}
+\paragraph{全微分近似计算}
+\section{多元复合函数求导法则}
+\paragraph{通用复合} 对于$z = f(u, v)$, $u = \phi (x, y)$, $\Psi (x, y)$
+\begin{equation}
+\begin{pmatrix}
+    \dfrac{\partial z}{\partial x} & \dfrac{\partial z}{\partial x}
+\end{pmatrix}
+=
+\begin{pmatrix}
+    \dfrac{\partial z}{\partial u} & \dfrac{\partial z}{\partial v}
+\end{pmatrix}
+\begin{pmatrix}
+    \dfrac{\partial u}{\partial x} & \dfrac{\partial u}{\partial y} \\[8pt]
+    \dfrac{\partial v}{\partial x} & \dfrac{\partial v}{\partial y}
+\end{pmatrix}
+\tag{多元复合函数通用求导法则}
+\end{equation}
+\paragraph{全微分形式不变性质} 对于$z = f(u, v)$, $u = \phi (x, y)$, $\Psi (x, y)$, 且这两个函数具有连续偏导数
+\begin{align*}
+    dz &= \frac{\partial z}{\partial u} du + \frac{\partial z}{\partial u} du \\
+       &= \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy
+\end{align*}
+
+\begin{example}{设$z = e^u sin\ v$, $u = xy$, $v = x + y$, 求$\frac{\partial z}{\partial x}$, $\frac{\partial z}{\partial y}$}
+    \begin{align*}
+        dz &= d(e^u sin\ v) \\
+           &= e^u sin\ v du + e^u cos\ v dv \\
+           &= e^u sin\ v d(xy) + e^u cos\ v d(x + y) \\
+           &= e^u sin\ v (ydx + xdy) + e^u cos\ v (dx + dy)
+    \end{align*}
+\end{example}
 \end{document}
