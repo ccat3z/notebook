@@ -6,11 +6,33 @@
 
 \usepackage{amsmath}
 \usepackage{subfiles}
-\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{pstricks-add}
+\usepackage[colorlinks=true, pdfborder={0 0 0}, bookmarksopen, bookmarksdepth=4]{hyperref}
+
+\newcounter{thm}[section]
+\renewcommand\thethm{\thesection.\arabic{thm}}
+\theoremstyle{definition} \newtheorem{define}[thm]{定义}
+\theoremstyle{definition} \newtheorem*{define*}{定义}
+\newtheorem{mthm}[thm]{定理}
+\newtheorem*{mthm*}{定理}
+
+\newcounter{example}[section]
+\renewcommand\theexample{\thesection.\arabic{example}}
+\newenvironment{example}[1]{\begin{figure}[h]
+    \stepcounter{example}
+    \makebox[4.5em][l]{\textbf{例\theexample}} #1 \\
+    \makebox[4.5em][l]{\textbf{解}}}{\end{figure}}
+
+\newcommand{\figref}[1]{(图\ref{#1})}
+\newcommand{\inlineps}[1]{\parbox[c]{3em}{\fbox{\psscalebox{0.5}{\begin{pspicture*}(-1,-1)(1,1)#1\end{pspicture*}}}}}
+
 \begin{document}
 
 \frontmatter
 \maketitle
+
+\tableofcontents
 
 \mainmatter{}
 \subfile{space-analytic-geometry}
