@@ -53,7 +53,7 @@
 \[ \left. \frac{\partial f}{\partial x} \right|_{\begin{smallmatrix}x = x_0\\y = y_0\end{smallmatrix}} = f_x(x_0, y_0) \]
 \subparagraph{计算方法} 把其他自变量看做常数
 \paragraph{高阶偏导数}
-    高阶混合偏导数中偏导数连续点条件下与求导次序无关
+    高阶混合偏导数中偏导数连续的条件下与求导次序无关
 \subparagraph{拉普拉斯方程?} (P71)
 
 \section{全微分}
@@ -80,6 +80,19 @@ $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
 \begin{mthm*}[可导不一定可微]
     函数$z = f(x, y)$的偏导数$\frac{\partial z}{\partial x}$, $\frac{\partial z}{\partial y}$在点$(x, y)$连续, 那么该函数在该点可微分
 \end{mthm*}
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \node (A) at (0,0) {函数连续};
+        \node (B) at (3,0) {可微分};
+        \node (C) at (60:3) {函数可偏导};
+        \node (D) at (6, 0) {连续偏导数};
+        \draw[double distance=2pt] (A) -- (C);
+        \draw[double distance=2pt, <-] (A) -- (B);
+        \draw[double distance=2pt, <-] (C) -- (B);
+        \draw[double distance=2pt, <-] (B) -- (D);
+    \end{tikzpicture}
+\end{figure}
 \paragraph{全微分近似计算}
 \section{多元复合函数求导法则}
 \paragraph{通用复合} 对于$z = f(u, v)$, $u = \phi (x, y)$, $\Psi (x, y)$
@@ -96,6 +109,7 @@ $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
     \dfrac{\partial v}{\partial x} & \dfrac{\partial v}{\partial y}
 \end{pmatrix}
 \tag{多元复合函数通用求导法则}
+\label{多元复合函数通用求导法则}
 \end{equation}
 \paragraph{全微分形式不变性质} 对于$z = f(u, v)$, $u = \phi (x, y)$, $\Psi (x, y)$, 且这两个函数具有连续偏导数
 \begin{align*}
@@ -111,4 +125,99 @@ $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
            &= e^u sin\ v (ydx + xdy) + e^u cos\ v (dx + dy)
     \end{align*}
 \end{example}
+
+\section{隐函数求导法}
+\paragraph{一个方程} 对于$F(X, y, z) = 0$若函数$F(x, y, z)$在点$P(x_0, y_0, z_0)$的某一领域内具有连续偏导数
+\begin{equation}
+    \frac{\partial y}{\partial z} = - \frac{F_x}{F_y} \tag{隐函数求导公式}
+\end{equation}
+\paragraph{方程组}\label{方程组定义隐函数求导}
+对于$\begin{cases}F(x, y, u, v) = 0 \\ G(x, y, u, v) = 0\end{cases}$,
+四个变量中一般只能有两个个变量独立变化,
+因此可确定两个二元函数$\begin{cases}F(x, y, u(x, y), v(x, y)) = 0 \\ G(x, y, u(x, y), v(x, y)) = 0\end{cases}$ \\
+应用\eqref{多元复合函数通用求导法则}则对两边对x求导可得
+$\begin{cases}F_x  + F_u \frac{\partial u}{\partial x} + F_v \frac{\partial v}{\partial x} = 0 \\ G_x  + G_u \frac{\partial u}{\partial x} + G_v \frac{\partial v}{\partial x} = 0\end{cases}$\\
+解得$
+    \begin{cases}
+        \frac{\partial u}{\partial x} = \frac{\left|\begin{smallmatrix}-F_x && F_v \\ -G_x && G_v\end{smallmatrix}\right|}{\left|\begin{smallmatrix}F_u && F_v \\ G_u && G_v\end{smallmatrix}\right|} = -\frac{1}{J}\frac{\partial(F, G)}{\partial(x, v)} \\
+        \frac{\partial v}{\partial x} = \frac{\left|\begin{smallmatrix}F_u && -F_x \\ G_u && -G_x\end{smallmatrix}\right|}{\left|\begin{smallmatrix}F_u && F_v \\ G_u && G_v\end{smallmatrix}\right|} = -\frac{1}{J}\frac{\partial(F, G)}{\partial(u, x)}
+    \end{cases}
+$
+\begin{define*}[雅可比行列式]
+    \begin{equation}
+    \frac{\partial (F, G)}{\partial (u, v)} = \begin{vmatrix}F_u & F_v \\ G_u & G_v\end{vmatrix} \tag{雅可比行列式} \label{雅可比行列式}
+    \end{equation}
+\end{define*}
+
+\section{多元函数微分学的几何应用}
+\subsection{一元向量值函数及其导数(导向量)}
+\subsection{空间曲线的切线和法平面}\label{空间曲线的切线和法平面}
+对于空间曲线$\Gamma = \begin{cases} x = \varphi (t) \\ y = \psi (t) \\ z = \omega (t) \end{cases}$切向量为
+\[
+    T = \begin{pmatrix} \varphi^{'} (t_0) && \psi^{'} (t_0) && \omega^{'} (t_0) \end{pmatrix}
+\]
+切线方程为
+\[
+    \frac{x - x_0}{\varphi^{'} (t_0)} = \frac{y - y_0}{\psi^{'} (t_0)} = \frac{z - z_0}{\omega^{'} (t_0)}
+\]
+法平面方程
+\[
+    {\varphi^{'} (t_0)}({x - x_0}) + {\psi^{'} (t_0)}({y - y_0}) + {\omega^{'} (t_0)}({z - z_0}) = 0
+\]
+\begin{example}
+    {对于空间曲线$\begin{cases} F(x, y, z) = 0 \\ G(x, y, z) = 0 \end{cases}$求切线与法平面}
+    将$\begin{cases} F(x, y, z) = 0 \\ G(x, y, z) = 0 \end{cases}$看作
+    \[\begin{cases} F(x, y(x), z(x)) = 0 \\ G(x, y(x), z(x)) = 0 \end{cases}\]
+    对两边求全导数得
+    \[\begin{cases}F_x  + F_y \dfrac{\partial y}{\partial x} + F_z \dfrac{\partial z}{\partial x} = 0 \\[8pt] G_x  + G_y \dfrac{\partial y}{\partial x} + G_z \dfrac{\partial z}{\partial x} = 0\end{cases}\]
+    应用\ref{方程组定义隐函数求导}可得到
+    \[\begin{pmatrix}\dfrac{dx}{dx} && \dfrac{dy}{dx} && \dfrac{dz}{dx}\end{pmatrix} = \begin{pmatrix} 1 && -\dfrac{1}{J}\dfrac{\partial(F, G)}{\partial(x, z)} && -\dfrac{1}{J}\dfrac{\partial(F, G)}{\partial(y, x)} \end{pmatrix}, J = \frac{\partial(F, G)}{\partial(y, z)}\]
+    乘J可得切向量
+    \[T = \begin{pmatrix} \dfrac{\partial(F, G)}{\partial(y, z)} && \dfrac{\partial(F, G)}{\partial(z, x)} && \dfrac{\partial(F, G)}{\partial(x, y)} \end{pmatrix}\]
+    由此可得切线方程和法平面
+\end{example}
+\subsection{曲面的切平面与法线}
+对于隐式确定的曲面方程$F(x, y, z) = 0$法向量为
+\[n = (F_x, F_y, F_z)\]
+切平面与法线参考\ref{空间曲线的切线和法平面}
+
+\section{方向导数与梯度}
+\subsection{方向导数}
+若$f(x, y)$在点$P_0(x_0, y_0)$可微分, 那么函数在该点沿任一方向$l$的方向导数存在
+\[
+    \left.\frac{\partial f}{\partial l}\right|_{(x_0, y_0)} = f_x\ cos\ \alpha + f_y\ cos\ \beta
+\]
+$cos\ \alpha$和$cos\ \beta$是方向$l$的方向余弦, $(cos\ \alpha, cos\ \beta)$为$l$的单位向量
+\subsection{梯度}
+对于$f(x, y)$在点$P_0(x_0, y_0)$的梯度为
+\[grad\ f = \nabla f = f_x \vec{i} + f_y \vec{j}\]
+如果$f$在该点可微分, 那么
+\begin{align*}
+    \left.\frac{\partial f}{\partial l}\right|_{(x_0, y_0)} &= f_x\ cos\ \alpha + f_y\ cos\ \beta \\
+    &= grad\ f \cdot \vec{e_i} = |grad\ f|\ cos\ \theta
+\end{align*}
+其中$\theta = (\reallywidehat{grad\ f, e_i})$
+
+\section{多元函数的极值及其求法}
+\subsection{无条件极值}
+若$z = f(x, y)$在点$(x_0, y_0)$的某领域内连续且有一阶及二阶连续偏导数, 又$f_x (x_0, y_0) = 0$, $f_y (x_0, y_0) = 0$,
+令$f_{xy} (x_0, y_0) = A$, $f_{xy} (x_0, y_0)$, $f_{yy} (x_0, y_0) = C$
+则取得极值条件如下:
+\begin{itemize}
+    \item $AC - B^2 > 0$时具有极值, 且当$A < 0$时有极大值, $A > 0$时有极小值
+    \item $AC - B^2 < 0$时没有极值
+    \item $AC - B^2 = 0$时不能确定
+\end{itemize}
+\subsection{条件极值 拉格朗日乘数法}
+对于函数$z = f(x, y)$在附加条件$\varphi (x, y) = 0$下的可能极值点, 作拉格朗日函数
+\[L(x, y) = f(x, y) + \lambda \varphi (x, y) = 0\]
+求解方程组
+\[
+    \begin{cases}
+        L_x = 0 \\
+        L_y = 0 \\
+        \varphi (x, y) = 0
+    \end{cases}
+\]
+解得$(x, y)$即可能极值点
 \end{document}
