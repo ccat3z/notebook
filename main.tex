@@ -22,10 +22,9 @@
 
 \newcounter{example}[section]
 \renewcommand\theexample{\thesection.\arabic{example}}
-\newenvironment{example}[1]{\begin{figure}[ht]
-    \stepcounter{example}
-    \makebox[4.5em][l]{\textbf{例\theexample}} #1 \\
-    \makebox[4.5em][l]{\textbf{解}}}{\end{figure}}
+\newenvironment{example}[1]{\stepcounter{example}%
+    \makebox[4.5em][l]{\textbf{例\theexample}} #1 \
+    \makebox[4.5em][l]{\textbf{解}}}{}
 
 \newcommand{\figref}[1]{(图\ref{#1})}
 \newcommand{\inlineps}[1]{\parbox[c]{3em}{\fbox{\psscalebox{0.5}{\begin{pspicture*}(-1,-1)(1,1)#1\end{pspicture*}}}}}
