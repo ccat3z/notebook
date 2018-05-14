@@ -19,5 +19,6 @@
                 "%DOC%"
             ]
         }
-    ]
+    ],
+    "latex-workshop.latex.outputDir": "./build"
 }
