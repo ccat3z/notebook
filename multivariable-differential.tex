@@ -111,9 +111,9 @@ $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
 \tag{多元复合函数通用求导法则}
 \label{多元复合函数通用求导法则}
 \end{equation}
-\paragraph{全微分形式不变性质} 对于$z = f(u, v)$, $u = \phi (x, y)$, $\Psi (x, y)$, 且这两个函数具有连续偏导数
+\paragraph{全微分形式不变性质} 对于$z = f(u, v)$, $u = \phi (x, y)$, $v = \Psi (x, y)$, 且这两个函数具有连续偏导数
 \begin{align*}
-    dz &= \frac{\partial z}{\partial u} du + \frac{\partial z}{\partial u} du \\
+    dz &= \frac{\partial z}{\partial u} du + \frac{\partial z}{\partial v} dv \\
        &= \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy
 \end{align*}
 
@@ -129,7 +129,7 @@ $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
 \section{隐函数求导法}
 \paragraph{一个方程} 对于$F(X, y, z) = 0$若函数$F(x, y, z)$在点$P(x_0, y_0, z_0)$的某一领域内具有连续偏导数
 \begin{equation}
-    \frac{\partial y}{\partial z} = - \frac{F_x}{F_y} \tag{隐函数求导公式}
+    \frac{\partial y}{\partial x} = - \frac{F_x}{F_y} \tag{隐函数求导公式}
 \end{equation}
 \paragraph{方程组}\label{方程组定义隐函数求导}
 对于$\begin{cases}F(x, y, u, v) = 0 \\ G(x, y, u, v) = 0\end{cases}$,
