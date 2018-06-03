@@ -12,6 +12,15 @@
 向量积
 : $(a, b, c) \times (d, e, f) = \begin{vmatrix}\vec{i} & \vec{j} & \vec{k} \\ a & b & c \\ d & e & f\end{vmatrix}$
 
+混合积(平行六面体体积)
+: $[\vec{a}\ \vec{b}\ \vec{c}] = (\vec{a} \cdot \vec{b}) \times \vec{c} = \begin{vmatrix} a_x & a_y & a_z \\  b_x & b_y & b_z \\ c_x & c_y & c_z\end{vmatrix}$
+
+    证明三线共面
+    : $[\vec{a}\ \vec{b}\ \vec{c}] = 0$
+
+$\vec{r}$在$\vec{c}$上的投影
+: $Prj_{\vec{c}} \vec{r}$
+
 ## 空间曲面与空间曲线
 
 曲面方程
