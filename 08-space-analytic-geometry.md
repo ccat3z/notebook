@@ -21,6 +21,11 @@
 $\vec{r}$在$\vec{c}$上的投影
 : $Prj_{\vec{c}} \vec{r}$
 
+向量余弦
+: 对于向量$\vec{a} (a_x, a_y, a_z)$, 方向余弦为$\begin{cases}cos\ \alpha = \dfrac{a_x}{|a|} \\ cos\ \beta = \dfrac{a_y}{|a|} \\ cos\ \gamma = \dfrac{a_z}{|a|}\end{cases}$
+
+    ![](./image/08-space-analytic-geometry/direction-cosine.png){width=100px}
+
 ## 空间曲面与空间曲线
 
 曲面方程
