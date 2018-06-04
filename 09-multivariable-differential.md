@@ -12,9 +12,8 @@
 
 $U(P_0, \delta) = \{ P \mid |P P_0| < \delta \}$
 
-##### 去心邻域
-
-$\mathring{U}(P_0, \delta) = \{ P \mid 0 < |P P_0| < \delta \}$
+去心邻域 
+: $\mathring{U}(P_0, \delta) = \{ P \mid 0 < |P P_0| < \delta \}$
 
 ##### 领域描述点与点集关系
 
@@ -47,15 +46,13 @@ $\mathring{U}(P_0, \delta) = \{ P \mid 0 < |P P_0| < \delta \}$
 
 ### 多元函数概念
 
-#### 极限
+极限
+: $P_0(x_0, y_0) \text{是} D \text{的聚点}\ \exists A\ \forall \varepsilon\ P \in D \cap \mathring{U}(P_0, \delta)\ |f(P) - A| = |f(x,y) - A| < \delta$
 
-$P_0(x_0, y_0) \text{是} D \text{的聚点}\ \exists A\ \forall \varepsilon\ P \in D \cap \mathring{U}(P_0, \delta)\ |f(P) - A| = |f(x,y) - A| < \delta$
+连续
+: $P_0(x_0, y_0) \text{是} D \text{的聚点}\ \lim_{(x, y)\rightarrow(x_0, y_0)} f(x, y) = f(x_0, y_0)$
 
-#### 连续
-
-$P_0(x_0, y_0) \text{是} D \text{的聚点}\ \lim_{(x, y)\rightarrow(x_0, y_0)} f(x, y) = f(x_0, y_0)$
-
-* 间断点
+    * 间断点
 
 ##### 有界连续多元函数点性质
 
@@ -65,80 +62,69 @@ $P_0(x_0, y_0) \text{是} D \text{的聚点}\ \lim_{(x, y)\rightarrow(x_0, y_0)}
 
 ## 偏导数
 
-#### 偏导数基础
-
 $$ \left. \frac{\partial f}{\partial x} \right|_{\begin{smallmatrix}x = x_0\\y = y_0\end{smallmatrix}} = f_x(x_0, y_0) $$
 
-##### 计算方法
+计算方法
+: 把其他自变量看做常数
 
-把其他自变量看做常数
-
-#### 高阶偏导数
-
-高阶混合偏导数中偏导数连续的条件下与求导次序无关
-
-##### 拉普拉斯方程? (P71)
+::: {.mthm latex=true}
+高阶混合偏导数在其连续的条件下与求导次序无关
+:::
 
 ## 全微分
 
-#### 偏增量和偏微分
+偏增量和偏微分
+: 
 
-$$ f(x + \Delta x, y) - f(x, y) \approx f_x(x, y) \Delta x $$
-左端是对x\uwave{偏增量}, 右端是对x\uwave{偏微分}
+    $$ f(x + \Delta x, y) - f(x, y) \approx f_x(x, y) \Delta x $$
+    左端是对x\uwave{偏增量}, 右端是对x\uwave{偏微分}
 
-#### 全增量
+全增量
+: $\Delta z = f (x + \Delta x, y + \Delta y) - f(x, y)$
 
-$\Delta z = f (x + \Delta x, y + \Delta y) - f(x, y)$
+可微与全微分
+: \underline{全方向切线在同一平面}
 
-#### 可微与全微分
+    若全增量$\Delta z$可表示为: $\Delta z = A \Delta x + B \Delta y + o(\rho)$
+    其中$A$, $B$仅与$x$, $y$有关, $\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$,
+    那么称$z = f(x, y)$在$(x, y)$\uwave{可微分}\
+    $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
 
-\underline{全方向切线在同一平面}
+(全)可微与(偏)可导的关系
+: 
 
-若全增量$\Delta z$可表示为: $\Delta z = A \Delta x + B \Delta y + o(\rho)$
-其中$A$, $B$仅与$x$, $y$有关, $\rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$,
-那么称$z = f(x, y)$在$(x, y)$\uwave{可微分}\
-$dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
+    ::: {.mthm latex=true args="[可微一定可导]"}
+    如果$z = f(x, y)$在点$(x, y)$可微, 那么该函数在点$(x, y)$点偏导数$\frac{\partial z}{\partial x}$与$\frac{\partial z}{\partial x}$必定存在,
+    且全微分为
+    $$
+        dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial x} dy
+    $$
+    又称\underline{叠加原理}
+    :::
 
-#### (全)可微与(偏)可导的关系
-
-\begin{mthm*}[可微一定可导]
-如果$z = f(x, y)$在点$(x, y)$可微, 那么该函数在点$(x, y)$点偏导数$\frac{\partial z}{\partial x}$与$\frac{\partial z}{\partial x}$必定存在,
-且全微分为
-\begin{equation}
-    dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial x} dy \tag{全微分}
-\end{equation}
-又称\underline{叠加原理}
-\end{mthm*}
-
-\begin{mthm*}[可导不一定可微]
+    ::: {.mthm latex=true args="[可导不一定可微]"}
     函数$z = f(x, y)$的偏导数$\frac{\partial z}{\partial x}$, $\frac{\partial z}{\partial y}$在点$(x, y)$连续, 那么该函数在该点可微分
-\end{mthm*}
+    :::
 
-\begin{figure}[ht]
-    \centering
-    \begin{tikzpicture}
-        \node (A) at (0,0) {函数连续};
-        \node (B) at (3,0) {可微分};
-        \node (C) at (60:3) {函数可偏导};
-        \node (D) at (6, 0) {连续偏导数};
-        \draw[double distance=2pt] (A) -- (C);
-        \draw[double distance=2pt, <-] (A) -- (B);
-        \draw[double distance=2pt, <-] (C) -- (B);
-        \draw[double distance=2pt, <-] (B) -- (D);
-    \end{tikzpicture}
-\end{figure}
+### 全微分近似计算
 
-#### 全微分近似计算
+::: {.example}
+求$(1.04)^{2.02}$的近似值
+
+$f(x, y)= x^y$, $x = 1, y = 2, \Delta x = 0.04, \Delta y = 0.02$, $(1.04)^{2.02} \approx 1 + f_x (1, 2) \times 0.04 + f_y (1, 2) \times 0.02 = 1.08$
+:::
 
 ## 多元复合函数求导法则
 
-#### 通用复合
+### 通用复合
+
+\label{多元复合函数通用求导法则}
 
 对于$z = f(u, v)$, $u = \phi (x, y)$, $\Psi (x, y)$
 
-\begin{equation}
+$$
 \begin{pmatrix}
-    \dfrac{\partial z}{\partial x} & \dfrac{\partial z}{\partial x}
+    \dfrac{\partial z}{\partial x} & \dfrac{\partial z}{\partial y}
 \end{pmatrix}=
 \begin{pmatrix}
     \dfrac{\partial z}{\partial u} & \dfrac{\partial z}{\partial v}
@@ -147,11 +133,9 @@ $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
     \dfrac{\partial u}{\partial x} & \dfrac{\partial u}{\partial y} \\[8pt]
     \dfrac{\partial v}{\partial x} & \dfrac{\partial v}{\partial y}
 \end{pmatrix}
-\tag{多元复合函数通用求导法则}
-\label{多元复合函数通用求导法则}
-\end{equation}
+$$
 
-#### 全微分形式不变性质
+### 全微分形式不变性质
 
 对于$z = f(u, v)$, $u = \phi (x, y)$, $v = \Psi (x, y)$, 且这两个函数具有连续偏导数
 
@@ -169,36 +153,36 @@ $dz = A \Delta x + B \Delta y$ 为$z = f(x, y)$在$(x, y)$的\uwave{全微分}
        &= e^u sin\ v d(xy) + e^u cos\ v d(x + y) \\
        &= e^u sin\ v (ydx + xdy) + e^u cos\ v (dx + dy)
 \end{align*}
-
 :::
 
 ## 隐函数求导法
 
-#### 一个方程
-对于$F(X, y, z) = 0$若函数$F(x, y, z)$在点$P(x_0, y_0, z_0)$的某一领域内具有连续偏导数
+### 一个方程
+对于$F(x, y, z) = 0$若函数$F(x, y, z)$在点$P(x_0, y_0, z_0)$的某一领域内具有连续偏导数
 
 $$
-    \frac{\partial y}{\partial x} = - \frac{F_x}{F_y} \tag{隐函数求导公式}
+\frac{\partial y}{\partial x} = - \frac{F_x}{F_y}
 $$
 
-#### 方程组
+### 方程组
 \label{方程组定义隐函数求导}
 
 对于$\begin{cases}F(x, y, u, v) = 0 \\ G(x, y, u, v) = 0\end{cases}$,
 四个变量中一般只能有两个个变量独立变化,
-因此可确定两个二元函数$\begin{cases}F(x, y, u(x, y), v(x, y)) = 0 \\ G(x, y, u(x, y), v(x, y)) = 0\end{cases}$ \
-应用\eqref{多元复合函数通用求导法则}则对两边对x求导可得
+因此可确定两个二元函数$\begin{cases}F(x, y, u(x, y), v(x, y)) = 0 \\ G(x, y, u(x, y), v(x, y)) = 0\end{cases}$,
+应用\nameref{多元复合函数通用求导法则}则对两边对x求导可得
 $\begin{cases}
 F_x  + F_u \frac{\partial u}{\partial x} + F_v \frac{\partial v}{\partial x} = 0 \\
 G_x  + G_u \frac{\partial u}{\partial x} + G_v \frac{\partial v}{\partial x} = 0
-\end{cases}$\
+\end{cases}$
 解得
 $\begin{cases} \frac{\partial u}{\partial x} = \frac{\left|\begin{smallmatrix}-F_x && F_v \\ -G_x && G_v\end{smallmatrix}\right|}{\left|\begin{smallmatrix}F_u && F_v \\ G_u && G_v\end{smallmatrix}\right|} = -\frac{1}{J}\frac{\partial(F, G)}{\partial(x, v)} \\ \frac{\partial v}{\partial x} = \frac{\left|\begin{smallmatrix}F_u && -F_x \\ G_u && -G_x\end{smallmatrix}\right|}{\left|\begin{smallmatrix}F_u && F_v \\ G_u && G_v\end{smallmatrix}\right|} = -\frac{1}{J}\frac{\partial(F, G)}{\partial(u, x)} \end{cases}$
-\begin{define*}[雅可比行列式]
-    \begin{equation}
-    \frac{\partial (F, G)}{\partial (u, v)} = \begin{vmatrix}F_u & F_v \\ G_u & G_v\end{vmatrix} \tag{雅可比行列式} \label{雅可比行列式}
-    \end{equation}
-\end{define*}
+
+::: {.define latex=true args="[雅可比行列式]"}
+$$
+\frac{\partial (F, G)}{\partial (u, v)} = \begin{vmatrix}F_u & F_v \\ G_u & G_v\end{vmatrix}
+$$
+:::
 
 ## 多元函数微分学的几何应用
 
@@ -236,7 +220,7 @@ $$
 
 对于隐式确定的曲面方程$F(x, y, z) = 0$法向量为
 $$n = (F_x, F_y, F_z)$$
-切平面与法线参考\ref{空间曲线的切线和法平面}
+切平面与法线参考\nameref{空间曲线的切线和法平面}
 
 ## 方向导数与梯度
 
