@@ -93,6 +93,12 @@ $$ \left. \frac{\partial f}{\partial x} \right|_{\begin{smallmatrix}x = x_0\\y =
 (全)可微与(偏)可导的关系
 : 
 
+    \begin{align*}
+        \text{可微} &\Rightarrow \text{可导} \\
+        \text{可微} &\Leftarrow \text{可导且导函数连续} \\
+        \text{可微} &\Rightarrow \text{连续}
+    \end{align*}
+
     ::: {.mthm latex=true args="[可微一定可导]"}
     如果$z = f(x, y)$在点$(x, y)$可微, 那么该函数在点$(x, y)$点偏导数$\frac{\partial z}{\partial x}$与$\frac{\partial z}{\partial x}$必定存在,
     且全微分为
@@ -239,16 +245,30 @@ $$grad\ f = \nabla f = f_x \vec{i} + f_y \vec{j}$$
 如果$f$在该点可微分, 那么
 \begin{align*}
     \left.\frac{\partial f}{\partial l}\right|_{(x_0, y_0)} &= f_x\ cos\ \alpha + f_y\ cos\ \beta \\
-    &= grad\ f \cdot \vec{e_i} = |grad\ f|\ cos\ \theta
+    &= grad\ f \cdot \vec{e_l} = |grad\ f|\ cos\ \theta
 \end{align*}
-其中$\theta = (\reallywidehat{grad\ f, e_i})$
+其中$\theta$为$grad\ f$与$\vec{e_l}$的夹角
+
+由上式可得
+
+$\theta = 0$
+: 方向导数取最大值
+
+$\theta = \pi$
+: 方向导数取最小值
+
+$\theta = \frac{\pi}{2}$
+: 方向导数取0
 
 ## 多元函数的极值及其求法
 
 ### 无条件极值
 
 若$z = f(x, y)$在点$(x_0, y_0)$的某领域内连续且有一阶及二阶连续偏导数, 又$f_x (x_0, y_0) = 0$, $f_y (x_0, y_0) = 0$,
-令$f_{xy} (x_0, y_0) = A$, $f_{xy} (x_0, y_0)$, $f_{yy} (x_0, y_0) = C$
+令
+
+$$\begin{cases}f_{xx} (x_0, y_0) = A \\ f_{xy} (x_0, y_0) = B \\ f_{yy} (x_0, y_0) = C\end{cases}$$
+
 则取得极值条件如下:
 \begin{itemize}
     \item $AC - B^2 > 0$时具有极值, 且当$A < 0$时有极大值, $A > 0$时有极小值
@@ -269,3 +289,5 @@ $$
     \end{cases}
 $$
 解得$(x, y)$即可能极值点
+
+可扩展为三维形式
