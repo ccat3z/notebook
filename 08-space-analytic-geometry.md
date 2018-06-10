@@ -10,7 +10,7 @@
 : $\vec{u} \cdot \vec{v} = |u| |v| cos\ \theta$
 
 向量积
-: $(a, b, c) \times (d, e, f) = \begin{vmatrix}\vec{i} & \vec{j} & \vec{k} \\ a & b & c \\ d & e & f\end{vmatrix}$
+: $\vec{a} \times \vec{b} = (a, b, c) \times (d, e, f) = \begin{vmatrix}\vec{i} & \vec{j} & \vec{k} \\ a & b & c \\ d & e & f\end{vmatrix} = |\vec{a}||\vec{b}| sin\ \theta$
 
 混合积(平行六面体体积)
 : $[\vec{a}\ \vec{b}\ \vec{c}] = (\vec{a} \cdot \vec{b}) \times \vec{c} = \begin{vmatrix} a_x & a_y & a_z \\  b_x & b_y & b_z \\ c_x & c_y & c_z\end{vmatrix}$
