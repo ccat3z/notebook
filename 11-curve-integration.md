@@ -40,7 +40,7 @@ $\int_L 2xy dx + x^2 dy = \int_0^1 (2 x \cdot x^2 + x^2 \cdot 2x) dx = 1$
 \end{example}
 
 ::: {.example}
-计算$\int_\Gamma x^3 dx + 3zy^2 dy - x^2y dz$, 其中$\Lambda$是从点$A(3, 2, 1)$到$B(0, 0, 0)的直线段$AB$
+计算$\int_\Gamma x^3 dx + 3zy^2 dy - x^2y dz$, 其中$\Lambda$是从点$A(3, 2, 1)$到$B(0, 0, 0)$的直线段$AB$
 
 直线$AB$方程为$\frac{x}{3} = \frac{y}{2} = \frac{z}{1}$, 即$\begin{cases}x = 3t \\ y = 2t \\ z = t\end{cases}$, $t$从$1$到$0$, 所以
 
