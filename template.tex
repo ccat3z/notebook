@@ -1,0 +1,44 @@
+\documentclass[12pt, a4paper]{ctexbook}
+
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage[backgroundcolor=white]{todonotes}
+
+\newcommand{\vectornum}[2]{\left(\begin{matrix}{#1}\\{#2}\end{matrix}\right)}
+\newcommand{\smallvectornum}[2]{\left(\begin{smallmatrix}{#1}\\{#2}\end{smallmatrix}\right)}
+
+\newcounter{thm}[section]
+\renewcommand\thethm{\thesection.\arabic{thm}}
+\theoremstyle{definition} \newtheorem{define}[thm]{定义}
+\newtheorem{mthm}[thm]{定理}
+
+\newcounter{example}[section]
+\renewcommand\theexample{\thesection.\arabic{example}}
+\newenvironment{example}[1]{\stepcounter{example}%
+\noindent\textbf{例\theexample} #1 \\ \textbf{解}\ }{}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\begin{document}
+$body$
+\end{document}
