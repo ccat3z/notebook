@@ -1,5 +1,5 @@
-let g:pandoc#command#autoexec_command = "Pandoc pdf --pdf-engine=xelatex --template template.tex --top-level-division=chapter --filter example.py --filter latexdivs.py --data-dir ."
-let g:pandoc#command#autoexec_on_writes = 1
+noremap <F9> :AsyncRun ./build.sh <cr>
+noremap <F10> :AsyncRun ./build.sh %:t <cr>
 set nowrap
 set nocursorcolumn
 set nocursorline
