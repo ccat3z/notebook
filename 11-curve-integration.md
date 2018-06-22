@@ -77,7 +77,15 @@ $$\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy =
 
 ### 特殊情况
 
-当$\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$时, 曲线积分与路径无关
+1. 当$\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$时, 曲线积分与路径无关, **某个函数的全微分**
+
+    **补充例题**, 图6.21
+
+1. 对于$L: \text{正向圆}$
+
+    复习题1.5
+
+    $$\oint_L \frac{xdy - ydx}{x^2 + y^2} = \begin{cases}\end{cases}$$
 
 ## 曲面积分
 
