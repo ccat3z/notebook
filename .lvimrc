@@ -1,0 +1,5 @@
+noremap <F9> :AsyncRun ./build.sh <cr>
+noremap <F10> :AsyncRun ./build.sh %:t <cr>
+set nowrap
+set nocursorcolumn
+set nocursorline
