@@ -141,6 +141,12 @@ $$
 \end{pmatrix}
 $$
 
+::: {.example}
+$z = f(x + y, xy), \frac{\partial ^2 z}{\partial x \partial y}$
+
+**补充**
+:::
+
 ### 全微分形式不变性质
 
 对于$z = f(u, v)$, $u = \phi (x, y)$, $v = \Psi (x, y)$, 且这两个函数具有连续偏导数
