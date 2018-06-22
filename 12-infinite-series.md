@@ -129,6 +129,8 @@ u_n \geq u_{n + 1} \\
 \end{cases} \Rightarrow \text{级数收敛}, \text{且} s \leq u_1, \text{其余项} r_n \text{的绝对值} |r_n| \leq u_{n + 1}$$
 :::
 
+* 级数$\sum_{n = 0}^{\infty} (-1)^{n + 1} \frac{1}{n}$收敛
+
 ### 绝对收敛与条件收敛
 
 绝对收敛
@@ -138,3 +140,118 @@ u_n \geq u_{n + 1} \\
 
 条件收敛
 : $\sum_{n = 1}^\infty u_n$收敛, $\sum_{n = 1}^\infty |u_n|$发散
+
+## 函数项级数
+
+函数项级数
+: 对于函数列${u_n(x)}$, $u_1(x) + u_2(x) + \ldots$为函数项无穷级数
+
+收敛(发散)点
+: $x = x_0$时, 函数项级数收敛(发散)
+
+收敛区间
+: 不包含边界点的收敛域
+
+收敛(发散)域
+: 收敛(发散)点的集合
+
+## 幂级数
+
+幂级数
+: $\sum_{n = 0}^{\infty} a_nx^n$
+
+    其中$a_0, a_1, a_2, \ldots, a_n, \ldots$为幂级数的系数
+
+::: {.mthm latex=true args="[阿贝尔(Abel)定理]"}
+对于$\sum_{n = 0}^{\infty} a_nx^n$, \
+当$x = x_0, x_0 \not= 0$时, 该级数收敛, $|x| < |x_0|$使得该级数收敛 \
+当$x = x_0, x_0 \not= 0$时, 该级数发散, $|x| > |x_0|$使得该级数发散
+:::
+
+::: {.mthm latex=true args="[阿贝尔(Abel)定理 推论]"}
+对于$\sum_{n = 0}^{\infty} a_nx^n$, 若不是仅在$x = 0$或整个数轴上收敛, 那么存在一个**收敛半径$R$**, 使得
+
+* $|x| < R$, 幂级数绝对收敛
+* $|x| > R$, 幂级数发散
+* $|x| = R$, 幂级数收敛性不确定
+:::
+
+::: {.mthm latex=true}
+如果$\lim_{n -> \infty} |\frac{a_{n + 1}}{a_n}| = \rho$, 那么
+
+$$R = \begin{cases}
+\dfrac{1}{\rho} & \rho \not= 0 \\
++\infty & \rho = 0 \\
+0 & \rho = +\infty
+\end{cases}$$
+:::
+
+**注意** 上述定理对$\sum_{n = 0}^{\infty} a_n x^{2n}$无效
+
+**补充例题P277**
+
+### 幂级数运算
+
+#### 四则运算
+
+$$\sum_{n = 0}^{\infty} a_nx^n\ \text{OP}\ \sum_{n = 0}^{\infty} b_nx^n$$
+
+加减乘
+: 收敛半径取较小的
+
+除
+: 收敛半径可能比二者小得多
+
+#### 幂级数的和函数性质
+
+$$s(x) = \sum_{n = 0}^{\infty} a_nx^n$$
+
+::: {.mthm latex=true}
+$s(x)$在收敛域上连续
+:::
+
+::: {.mthm latex=true}
+$s(x)$在收敛域上可积, 积分后收敛半径相同
+:::
+
+::: {.mthm latex=true}
+$s(x)$在收敛区间$(-R, R)$上可导(有任意阶导数), 求导后收敛半径相同
+:::
+
+**补充例题P280**
+
+## 函数展开称幂级数
+
+
+## 复习纲要
+
+* 常数项级数 $\text{收敛} \Leftrightarrow \lim_{n \rightarrow \infty S_n} \ldots$
+    * 正项级数(调和级数, 几何级数的证方法)
+        * 收敛判别法(比较判别法, 比值判别法)
+    * 交错级数判断收敛
+        1. $|\sum| \text{收敛} \Rightarrow \text{绝对收敛}$
+        2. 莱布尼兹法则 (条件收敛)
+* 函数项级数
+    * 幂级数 $\sum_{n=0}^\infty a_n x^n$
+        * 收敛区间(开区间, 不需要判断$\pm R$), 收敛半径, 收敛域 (需要判断$\pm R$) 之间的关系与求法
+        * 函数展开幂级数
+            * 泰勒级数 $f(x) = \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(x_0)(x - x_0)^n$
+            * 麦克拉伦级数 $f(x) = \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)(x)^n$
+            * $e^x = \sum_{n=0}^\infty \frac{x^n}{n!} \Rightarrow a^x = e^{ln\ a^x}= e^{xln\ a} = \sum_{n=0}^\infty \frac{(ln\ a)^x}{n!} x^n$
+            * $\frac{1}{1 - x} = \sum_{n=0}^\infty x^n (|x| < 1)$
+            * $\frac{1}{1 + x} = \sum_{n=0}^\infty (-1)^n x^n (|x| < 1)$
+            * $sin\ x = \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} x^{2n + 1}$
+            * $cos\ x = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} x^{2n}$
+            * $ln(1 + x)$
+            * \ldots 注意简单的微积分
+* 傅里叶级数(本质上是三角函数): P307
+    * 以$2\pi$为周期的函数展成傅立叶级数:
+
+        $f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty (a_n cos\ nx + b_n sin\ nx)$, 只有$cos$为偶函数, 后者同理
+
+        $a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) cos\ nx dx$
+
+        $b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) sin\ nx dx$
+
+    * 以$l$为周期 (简单了解)
+
