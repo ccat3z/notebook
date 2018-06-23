@@ -19,9 +19,10 @@ def index(key, value, format, meta):
     if key == 'Code':
         [[ident, classes, kvs], contents] = value
         if 'idx' in classes:
-            if '@' not in re.sub('!@', '', contents):
+            if '@' not in re.sub('"@', '', contents):
+                real_index = re.sub('!.*', '', re.sub('"!', '', contents))
                 contents = '{}@{}'.format(
-                    ' '.join(lazy_pinyin(contents, style=Style.TONE3)),
+                    ' '.join(lazy_pinyin(real_index, style=Style.TONE3)),
                     contents
                 )
             return [latex_in_line('\\index{{{}}}'.format(contents))]
