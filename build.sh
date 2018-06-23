@@ -11,4 +11,4 @@ else
     OUT="out"
 fi
 
-pandoc --pdf-engine=xelatex --pdf-engine-opt=-shell-escape --template template.tex --top-level-division=chapter --filter example.py --filter latexdivs.py --data-dir . ${FILES} -o ${OUT}.pdf
+pandoc --pdf-engine=xelatex --pdf-engine-opt=-shell-escape --template template.tex --top-level-division=chapter --filter example.py --filter latexdivs.py --filter makeindex.py --data-dir . ${FILES} -o ${OUT}.pdf
