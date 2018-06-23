@@ -16,6 +16,9 @@
 \usepackage{pstricks-add}
 \usepackage{esint}
 \usepackage{framed}
+\usepackage[makeindex]{imakeidx}
+\usepackage{makeidx}
+\makeindex
 
 $if(highlighting-macros)$
     $highlighting-macros$
@@ -68,4 +71,6 @@ $endif$
 
 \begin{document}
 $body$
+
+\printindex
 \end{document}
