@@ -4,6 +4,7 @@
 \usepackage{subfiles}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{bm}
 \usepackage{tikz}
 \usepackage{mathrsfs}
@@ -68,6 +69,11 @@ $endif$
 \stackon[1pt]{#1}{\tmpbox}%
 }
 \parskip 1ex
+
+\DeclareRobustCommand{\ojoin}{\rule[0ex]{.2em}{.4pt}\llap{\rule[1.10ex]{.2em}{.4pt}}}
+\newcommand{\leftouterjoin}{\mathrel{\ojoin\mkern-8mu\Join}}
+\newcommand{\rightouterjoin}{\mathrel{\Join\mkern-8mu\ojoin}}
+\newcommand{\fullouterjoin}{\mathrel{\ojoin\mkern-8mu\Join\mkern-8mu\ojoin}}
 
 \begin{document}
 $body$
