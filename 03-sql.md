@@ -4,6 +4,8 @@
 
 # SQL
 
+## T-SQL for school
+
 `SQL`{.idx}
 
 ```{.sql}
@@ -29,7 +31,9 @@ CREATE TABLE table_name (
         PRIMARY KEY (column_name_1, column_name_2)
 )
 
-CREATE INDEX index_name ON table_name(column_1, column_1)
+CREATE /* [UNIQUE] [CLUSTERED | NONCLUSTERED] */ INDEX index_name
+ON table_name(column_1, column_1) /* ASC | DESC */
+DROP INDEX index_name
 
 CREATE VIEW view_name /* (column_name, ...) */ AS
 SELECT ...
@@ -68,6 +72,18 @@ INSERT INTO table_name (column_name_1, ...) VALUES (column_data, ...)
 
 DELETE FROM table_name WHERE logical_expression
 UPDATE table_name SET column_name = data WHERE logical_expression
+
+CREATE LOGIN login_name WITH PASSWORD = 'password'
+DROP LOGIN login_name
+
+/* in database */
+CREATE USER user_name FOR LOGIN login_name
+DROP USER user_name
+
+GRANT SELECT, UPDATE(column_name, ...)
+ON table_name TO user_name WITH GRANT OPTION
+REVOKE /* ALL */ SELECT, INSERT, DELETE, UPDATE, REFERENCES
+ON table_name FROM u_many CASCADE
 ```
 
 ## SQL语言的主要特点
