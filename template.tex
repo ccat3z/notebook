@@ -1,0 +1,82 @@
+\documentclass[12pt, a4paper]{ctexbook}
+
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{stackengine}
+\usepackage{scalerel}
+\usepackage{pstricks-add}
+\usepackage{esint}
+\usepackage{framed}
+\usepackage[makeindex]{imakeidx}
+\usepackage{makeidx}
+\makeindex
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+
+$if(highlighting-macros)$
+    $highlighting-macros$
+$endif$
+
+\newcommand{\vectornum}[2]{\left(\begin{matrix}{#1}\\{#2}\end{matrix}\right)}
+\newcommand{\smallvectornum}[2]{\left(\begin{smallmatrix}{#1}\\{#2}\end{smallmatrix}\right)}
+
+\newcounter{thm}[section]
+\renewcommand\thethm{\thesection.\arabic{thm}}
+\theoremstyle{definition} \newtheorem{define}[thm]{定义}
+\theoremstyle{definition} \newtheorem*{define*}{定义}
+\newtheorem{mthm}[thm]{定理}
+\newtheorem*{mthm*}{定理}
+\newtheorem{prop}[thm]{性质}
+\newtheorem*{prop*}{性质}
+
+\newcounter{example}[section]
+\renewcommand\theexample{\thesection.\arabic{example}}
+\newenvironment{example}[1]{\stepcounter{example}%
+    \noindent\textbf{例\theexample} #1 \\ \textbf{解}\ }{}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\newcommand{\figref}[1]{(图\ref{#1})}
+\newcommand{\inlineps}[1]{\parbox[c]{3em}{\fbox{\psscalebox{0.5}{\begin{pspicture*}(-1,-1)(1,1)#1\end{pspicture*}}}}}
+
+\stackMath
+\newcommand\reallywidehat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}%
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+\parskip 1ex
+
+\DeclareRobustCommand{\ojoin}{\rule[0ex]{.2em}{.4pt}\llap{\rule[1.10ex]{.2em}{.4pt}}}
+\newcommand{\leftouterjoin}{\mathrel{\ojoin\mkern-8mu\Join}}
+\newcommand{\rightouterjoin}{\mathrel{\Join\mkern-8mu\ojoin}}
+\newcommand{\fullouterjoin}{\mathrel{\ojoin\mkern-8mu\Join\mkern-8mu\ojoin}}
+
+\begin{document}
+$body$
+
+\printindex
+\end{document}
