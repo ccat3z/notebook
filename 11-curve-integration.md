@@ -66,6 +66,9 @@ $\int_L 2xy dx + x^2 dy = \int_0^1 (2 x \cdot x^2 + x^2 \cdot 2x) dx = 1$
 
 ### 格林公式
 
+正向
+: 沿曲线方向左侧为曲线围成区域$D$
+
 与牛顿-莱布尼兹公式相对应
 
 平面闭区域上的二重积分与其边界曲线上的曲线积分关系
@@ -73,19 +76,40 @@ $\int_L 2xy dx + x^2 dy = \int_0^1 (2 x \cdot x^2 + x^2 \cdot 2x) dx = 1$
 <div latex="true" class="mthm" args="格林公式" id="格林公式">
 设闭区域$D$由分段光滑的曲线$L$围成, 若函数$P(x, y)$与$Q(x, y)$在$D$上具有一阶连续偏导数, 则有
 $$\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy = \oint_L Pdx + Qdy$$
+
+复连通区域右侧应包含所有曲线
 </div>
 
-### 特殊情况
+::: {.mthm latex="true"}
+**单连通域**内, 若$P(x, y)$与$Q(x, y)$具有一阶连续偏导数, $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$, 则曲线积分$\int_L Pdx + Qdy$在区域内与积分路径无关, 且$Pdx + Qdy$是某一函数$u(x, y)$的全微分
+:::
 
-1. 当$\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$时, 曲线积分与路径无关, **某个函数的全微分**
+::: {.example}
+$xe^{x^2 + y^2} dx + ye^{x^2 + y^2} dy$是否是某个函数全微分
 
-    **补充例题**, 图6.21
+令$P = xe^{x^2 + y^2}$, $Q = ye^{x^2 + y^2}$,
 
-1. 对于$L: \text{正向圆}$
+\begin{align*}
+\frac{\partial P}{\partial y} = 2xye^{x^2 + y^2} \\
+\frac{\partial Q}{\partial x} = 2xye^{x^2 + y^2}
+\end{align*}
 
-    复习题1.5
+所以是
+:::
 
-    $$\oint_L \frac{xdy - ydx}{x^2 + y^2} = \begin{cases}\end{cases}$$
+#### 特殊情况
+
+::: {.example}
+对于$L: \text{包含原点的正向闭合曲线}$, 求$\oint_L \frac{xdy - ydx}{x^2 + y^2} ds$
+
+因为包含原点, $\frac{\partial Q}{\partial x}$, $\frac{\partial Q}{\partial x}$存在不存在的情况. 作与顺时针$x^2 + y^2 = r^2$曲线$l$的复连通区域D
+
+\begin{align*}
+& \iint_D 0 dxdy = 0 = \oint_L \frac{xdy - ydx}{x^2 + y^2} ds + \oint_l \frac{xdy - ydx}{x^2 + y^2} ds \\
+\Rightarrow & \oint_L \frac{xdy - ydx}{x^2 + y^2} ds = - \oint_l \frac{xdy - ydx}{x^2 + y^2} ds \\
+=&\ - \int_{2\pi}^{0} 1 d\Theta = 2\pi
+\end{align*}
+:::
 
 ## 曲面积分
 

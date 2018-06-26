@@ -59,7 +59,7 @@ $$\text{级数} \sum_{n = 1}^\infty \text{收敛} \Leftrightarrow \forall \varep
 正项级数$\sum_{n = 1}^\infty u_n$ $\Leftrightarrow$ 它的部分和数列$\{s_n\}$有界
 :::
 
-::: {.mthm latex=true args="[比较审敛法]"}
+::: {.mthm latex=true args="[\underline{比较审敛法}]"}
 对于正项级数$\sum_{n = 1}^\infty u_n$, $\sum_{n = 1}^\infty u_v$, 且$u_n \leq u_v$, 若$\sum_{n = 1}^\infty u_v$收敛, 则$\sum_{n = 1}^\infty u_n$收敛, 发散同理
 :::
 
@@ -87,7 +87,7 @@ s_n &= 1 + \sum_{k = 2}^n \frac{1}{k^p} \leq 1 + \sum_{k = 2}^n \int_{k - 1}^k \
 1. 如果$\lim_{n -> \infty} \frac{u_n}{v_n} = l (0 < l\ \text{or}\ l = + \infty)$, 若$\sum_{n = 1}^\infty u_v$发散, 则$\sum_{n = 1}^\infty u_n$发散
 ::: 
 
-::: {.mthm latex=true args="[比值审敛法, 达朗贝尔(d'Alembert)判别法]"}
+::: {.mthm latex=true args="[\underline{比值审敛法}, 达朗贝尔(d'Alembert)判别法]"}
 对于正项级数$\sum_{n = 1}^\infty u_n$, 如果
 $$\lim_{n -> \infty} \frac{u_{n + 1}}{u_n} = \rho,
 \begin{cases}
@@ -133,6 +133,9 @@ u_n \geq u_{n + 1} \\
 
 ### 绝对收敛与条件收敛
 
+`重点!交错级数!绝对收敛`{.idx}
+`重点!交错级数!条件收敛`{.idx}
+
 绝对收敛
 : $\sum_{n = 1}^\infty |u_n|$收敛
 
@@ -156,6 +159,9 @@ u_n \geq u_{n + 1} \\
 : 收敛(发散)点的集合
 
 ## 幂级数
+
+`重点!幂级数!收敛半径`{.idx}
+`重点!幂级数!收敛区间`{.idx}
 
 幂级数
 : $\sum_{n = 0}^{\infty} a_nx^n$
@@ -204,6 +210,8 @@ $$\sum_{n = 0}^{\infty} a_nx^n\ \text{OP}\ \sum_{n = 0}^{\infty} b_nx^n$$
 
 #### 幂级数的和函数性质
 
+`重点!幂级数!和函数`{.idx}
+
 $$s(x) = \sum_{n = 0}^{\infty} a_nx^n$$
 
 ::: {.mthm latex=true}
@@ -218,40 +226,75 @@ $s(x)$在收敛域上可积, 积分后收敛半径相同
 $s(x)$在收敛区间$(-R, R)$上可导(有任意阶导数), 求导后收敛半径相同
 :::
 
-**补充例题P280**
+::: {.example}
+求幂级数$\sum_{n = 0}^{\infty} \frac{x^n}{n + 1}$的和函数
+
+1. 先求收敛域
+
+    $$\lim_{n \rightarrow \infty} |\frac{a_{n+1}}{a_n}| = \lim_{n \rightarrow \infty} \frac{n + 1}{n + 2} = 1$$
+
+    收敛半径$R = 1$
+
+1. 收敛域
+
+    $x = -1$时
+    : $\sum_{n = 0}^{\infty} \frac{(-1)^n}{n + 1}$收敛
+
+    $x = 1$时
+    : $\sum_{n = 0}^{\infty} \frac{1}{n + 1}$发散
+
+    收敛域为$[-1, 1)$
+
+1. 设和函数为$s(x) = \sum_{n = 0}^{\infty} \frac{x^n}{n + 1}$
+
+    \begin{align*}
+    x s(x) &= \sum_{n = 0}^{\infty} \frac{x^{n + 1}}{n + 1} \\
+    (x s(x))^{'} &= \sum_{n = 0}^{\infty} x^n, x \in [-1, 1) \\
+    &= \frac{1}{1 - x} \\
+    xs(x) &= \begin{cases}
+    \int_0^x \frac{1}{1 - t} dt = -ln(1 - x) & x \in [-1, 0) \cup (0, 1) \\
+    1 & x = 0
+    \end{cases}
+    \end{align*}
+:::
 
 ## 函数展开称幂级数
 
+`重点!函数展开幂级数`{.idx}
 
-## 复习纲要
+泰勒级数
+: $$f(x) = \int_{n = 0}^{\infty} \frac{1}{n!} f^{(n)} (x_0)(x - x_0)^n$$
+
+麦克劳林级数
+: $$f(x) = \int_{n = 0}^{\infty} \frac{1}{n!} f^{(n)} (0)(x)^n$$
+
+### 常见泰勒级数
+
+* $e^x = \sum_{n=0}^\infty \frac{x^n}{n!} \Rightarrow a^x = e^{ln\ a^x}= e^{xln\ a} = \sum_{n=0}^\infty \frac{(ln\ a)^x}{n!} x^n$
+* $\frac{1}{1 - x} = \sum_{n=0}^\infty x^n (|x| < 1)$
+* $\frac{1}{1 + x} = \sum_{n=0}^\infty (-1)^n x^n (|x| < 1)$
+* $sin\ x = \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} x^{2n + 1}$
+* $cos\ x = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} x^{2n}$
+* $ln(1 + x)$
+* \ldots 注意简单的微积分
+
+## 函数展开傅里叶级数
+
+`重点!函数展开傅里叶级数`{.idx}
+
+对于周期为$2\pi$的函数$f(x)$
+
+$$f(x) = \frac{a_0}{2} + \sum_{k = 1}^{\infty} (a_k cos\ kx + b_k sin\ kx)$$
+
+其中
+
+$$\begin{cases}
+a_n = \dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) cos\ nx dx & n \in \{0, 1, 2, 3, \ldots\} \\
+b_n = \dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) sin\ nx dx & n \in \{1, 2, 3, \ldots\}
+\end{cases}$$
+
+
+## 待补充
 
 * 常数项级数 $\text{收敛} \Leftrightarrow \lim_{n \rightarrow \infty S_n} \ldots$
     * 正项级数(调和级数, 几何级数的证方法)
-        * 收敛判别法(比较判别法, 比值判别法)
-    * 交错级数判断收敛
-        1. $|\sum| \text{收敛} \Rightarrow \text{绝对收敛}$
-        2. 莱布尼兹法则 (条件收敛)
-* 函数项级数
-    * 幂级数 $\sum_{n=0}^\infty a_n x^n$
-        * 收敛区间(开区间, 不需要判断$\pm R$), 收敛半径, 收敛域 (需要判断$\pm R$) 之间的关系与求法
-        * 函数展开幂级数
-            * 泰勒级数 $f(x) = \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(x_0)(x - x_0)^n$
-            * 麦克拉伦级数 $f(x) = \sum_{n=0}^\infty \frac{1}{n!} f^{(n)}(0)(x)^n$
-            * $e^x = \sum_{n=0}^\infty \frac{x^n}{n!} \Rightarrow a^x = e^{ln\ a^x}= e^{xln\ a} = \sum_{n=0}^\infty \frac{(ln\ a)^x}{n!} x^n$
-            * $\frac{1}{1 - x} = \sum_{n=0}^\infty x^n (|x| < 1)$
-            * $\frac{1}{1 + x} = \sum_{n=0}^\infty (-1)^n x^n (|x| < 1)$
-            * $sin\ x = \sum_{n=0}^\infty \frac{(-1)^n}{(2n + 1)!} x^{2n + 1}$
-            * $cos\ x = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} x^{2n}$
-            * $ln(1 + x)$
-            * \ldots 注意简单的微积分
-* 傅里叶级数(本质上是三角函数): P307
-    * 以$2\pi$为周期的函数展成傅立叶级数:
-
-        $f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty (a_n cos\ nx + b_n sin\ nx)$, 只有$cos$为偶函数, 后者同理
-
-        $a_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) cos\ nx dx$
-
-        $b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) sin\ nx dx$
-
-    * 以$l$为周期 (简单了解)
-

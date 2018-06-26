@@ -86,6 +86,11 @@ $$
 直线与平面夹角
 : $sin \varphi = \frac{|\vec{u} \cdot \vec{n_{\text{法}}}|}{|\vec{u}||\vec{n_{\text{法}}}|}$
 
+平面与平面夹角
+: $cos \varphi = \frac{|\vec{u_\text{法}} \cdot \vec{v_\text{法}}|}{|\vec{u_\text{法}}||\vec{v_\text{法}}|}$
+
+`重点!平面与平面夹角`{.idx}
+
 ### 平面束方程
 
 平面束

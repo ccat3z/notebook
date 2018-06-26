@@ -62,6 +62,8 @@ $U(P_0, \delta) = \{ P \mid |P P_0| < \delta \}$
 
 ## 偏导数
 
+`重点!偏导数`{.idx}
+
 $$ \left. \frac{\partial f}{\partial x} \right|_{\begin{smallmatrix}x = x_0\\y = y_0\end{smallmatrix}} = f_x(x_0, y_0) $$
 
 计算方法
@@ -93,6 +95,8 @@ $$ \left. \frac{\partial f}{\partial x} \right|_{\begin{smallmatrix}x = x_0\\y =
 (全)可微与(偏)可导的关系
 : 
 
+    `重点!可微与可导的关系`{.idx}
+
     \begin{align*}
         \text{可微} &\Rightarrow \text{可导} \\
         \text{可微} &\Leftarrow \text{可导且导函数连续} \\
@@ -123,6 +127,8 @@ $f(x, y)= x^y$, $x = 1, y = 2, \Delta x = 0.04, \Delta y = 0.02$, $(1.04)^{2.02}
 ## 多元复合函数求导法则
 
 ### 通用复合
+
+`重点!偏导数!多元复合`{.idx}
 
 \label{多元复合函数通用求导法则}
 
@@ -238,11 +244,22 @@ $$n = (F_x, F_y, F_z)$$
 
 ### 方向导数
 
+`重点!方向导数`{.idx}
+
 若$f(x, y)$在点$P_0(x_0, y_0)$可微分, 那么函数在该点沿任一方向$l$的方向导数存在
 $$
     \left.\frac{\partial f}{\partial l}\right|_{(x_0, y_0)} = f_x\ cos\ \alpha + f_y\ cos\ \beta
 $$
 $cos\ \alpha$和$cos\ \beta$是方向$l$的方向余弦, $(cos\ \alpha, cos\ \beta)$为$l$的单位向量
+
+::: {.example}
+求$z = xe^{2y}$在点$P(1, 0)$从$P(1, 0)$到$Q(2, -1)$的方向的方向导数
+
+方向为$\vec{PQ} = (1, 1)$, $\vec{e_l} = (\frac{1}{\sqrt{2}}, -\frac{1}{\sqrt{2}})$
+$$\left. \frac{\partial z}{\partial x} \right|_{(1, 0)} = 1, \left. \frac{\partial z}{\partial y} \right|_{(1, 0)} = 2$$
+
+所以方向导数为$\left. \frac{\partial z}{\partial l} \right| _{(1, 0)} = 1 \times \frac{1}{\sqrt{2}} + 2 \times (- \frac{1}{\sqrt{2}}) = - \frac{\sqrt{2}}{2}$
+:::
 
 ### 梯度
 
