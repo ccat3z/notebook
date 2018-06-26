@@ -4,17 +4,26 @@
 \usepackage{subfiles}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{bm}
 \usepackage{tikz}
 \usepackage{mathrsfs}
 \usetikzlibrary{arrows}
-\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{stackengine}
 \usepackage{scalerel}
 \usepackage{pstricks-add}
 \usepackage{esint}
+\usepackage{framed}
+\usepackage[makeindex]{imakeidx}
+\usepackage{makeidx}
+\makeindex
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+
+$if(highlighting-macros)$
+    $highlighting-macros$
+$endif$
 
 \newcommand{\vectornum}[2]{\left(\begin{matrix}{#1}\\{#2}\end{matrix}\right)}
 \newcommand{\smallvectornum}[2]{\left(\begin{smallmatrix}{#1}\\{#2}\end{smallmatrix}\right)}
@@ -61,6 +70,13 @@
 }
 \parskip 1ex
 
+\DeclareRobustCommand{\ojoin}{\rule[0ex]{.2em}{.4pt}\llap{\rule[1.10ex]{.2em}{.4pt}}}
+\newcommand{\leftouterjoin}{\mathrel{\ojoin\mkern-8mu\Join}}
+\newcommand{\rightouterjoin}{\mathrel{\Join\mkern-8mu\ojoin}}
+\newcommand{\fullouterjoin}{\mathrel{\ojoin\mkern-8mu\Join\mkern-8mu\ojoin}}
+
 \begin{document}
 $body$
+
+\printindex
 \end{document}
