@@ -20,11 +20,11 @@ def index(key, value, format, meta):
         [[ident, classes, kvs], contents] = value
         if 'idx' in classes:
             if '@' not in re.sub('"@', '', contents):
-                real_index = re.sub('!.*', '', re.sub('"!', '', contents))
-                contents = '{}@{}'.format(
-                    ' '.join(lazy_pinyin(real_index, style=Style.TONE3)),
-                    contents
-                )
+                real_indexs = re.sub('"!', '', contents).split('!')
+                contents = '!'.join(list(map(lambda x: '{}@{}'.format(
+                    ' '.join(lazy_pinyin(x, style=Style.TONE3)),
+                    x
+                ), real_indexs)))
             return [latex_in_line('\\index{{{}}}'.format(contents))]
 
 
