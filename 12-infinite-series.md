@@ -27,7 +27,7 @@
 ### 常见无穷级数
 
 等比级数(几何级数)
-: $\sum_{i = 0}^\infty aq^i$
+: $\sum_{i = 0}^\infty aq^i = \frac{a - aq^n}{1 - q} = \frac{a}{1 - q}, (|q| < 1)$
 
 调和级数\label{常见级数:调和级数}
 : 调和级数: $\sum_{n = 1}^\infty \frac{1}{n}$
@@ -259,7 +259,7 @@ $s(x)$在收敛区间$(-R, R)$上可导(有任意阶导数), 求导后收敛半�
 :::
 
 ::: {.example}
-求幂级数$\sum_{n = 1}^{\infty} nx^{n - 1}的和函数$
+求幂级数$\sum_{n = 1}^{\infty} nx^{n - 1}$的和函数
 
 $$\lim_{n \rightarrow \infty} |\frac{a_{n + 1}}{a_n}| = \lim_{n \rightarrow \infty} |\frac{n + 1}{n}| = 1 \Rightarrow R = 1$$
 
@@ -313,9 +313,3 @@ $$\begin{cases}
 a_n = \dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) cos\ nx dx & n \in \{0, 1, 2, 3, \ldots\} \\
 b_n = \dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) sin\ nx dx & n \in \{1, 2, 3, \ldots\}
 \end{cases}$$
-
-
-## 待补充
-
-* 常数项级数 $\text{收敛} \Leftrightarrow \lim_{n \rightarrow \infty S_n} \ldots$
-    * 正项级数(调和级数, 几何级数的证方法)

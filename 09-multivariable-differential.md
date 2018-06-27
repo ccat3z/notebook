@@ -150,7 +150,10 @@ $$
 ::: {.example}
 $z = f(x + y, xy), \frac{\partial ^2 z}{\partial x \partial y}$
 
-**补充**
+\begin{align*}
+\frac{\partial z}{\partial x} &= f_1^{'} + f_2^{'} y \\
+\frac{\partial ^2 z}{\partial x \partial y} &= f_{11}^{''} + f_{12}^{''} x + f_2^{'} + y(f_{21}^{''} + f_{22}^{''} x)
+\end{align*}
 :::
 
 ### 全微分形式不变性质

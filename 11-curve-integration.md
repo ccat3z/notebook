@@ -148,7 +148,7 @@ $$\iint_\Sigma P dydz + \iint_\Sigma Q dzdx + \iint_\Sigma R dxdy$$
 
 #### 计算方法
 
-$$\iint_\Sigma P dxdy = \pm \iint_\Sigma P[x, y, z(x, y)] dxdy$$
+$$\iint_\Sigma P dxdy = \pm \iint_{D_{xy}} P[x, y, z(x, y)] dxdy$$
 
 符号由有向曲面$\Sigma$方向与对应投影平面法坐标方向是否同向有关
 
