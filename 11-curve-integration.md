@@ -8,6 +8,8 @@
 
 ### 第一类曲线积分(对弧长的曲线积分)
 
+`重点!曲线积分!第一类曲线积分`{.idx}
+
 $$\int_L f(x, y, z) ds$$
 
 $\left\{\begin{array}{l} x = \varphi(t)\\ y = \psi(t) \end{array}\right., (\alpha \leq t \leq \beta)$时, $\int_L f(x, y) ds$ = $\int_\alpha^\beta f[\varphi(t), \psi(t)]\sqrt{\varphi^{'2}(t) + \psi^{'2}(t)}dt$
@@ -20,6 +22,8 @@ $$\int _ L f(x, y)ds = \int _ \alpha ^ \beta f(x, y(x)) \sqrt{1 + y^{'2} (x)} dx
 : 不均匀密度线质量
 
 ### 第二类曲线积分(对坐标的曲线积分)
+
+`重点!曲线积分!第二类曲线积分`{.idx}
 
 \begin{align*}
 \int_L \vec{A}(x, y) \cdot d \vec{r} &= \int_L Pdx + Qdy + Rdz \\
@@ -79,6 +83,8 @@ $$\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy =
 
 复连通区域右侧应包含所有曲线
 </div>
+
+`重点!曲线积分!与积分路径无关`{.idx}
 
 ::: {.mthm latex="true"}
 **单连通域**内, 若$P(x, y)$与$Q(x, y)$具有一阶连续偏导数, $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$, 则曲线积分$\int_L Pdx + Qdy$在区域内与积分路径无关, 且$Pdx + Qdy$是某一函数$u(x, y)$的全微分
@@ -155,6 +161,8 @@ $$\iint_\Sigma P dxdy = \pm \iint_{D_{xy}} P[x, y, z(x, y)] dxdy$$
 ![](./image/11-curve-integration/surface-integration-1.png)
 
 ### 高斯公式
+
+`重点!曲面积分!高斯公式`{.idx}
 
 空间闭区域上的三重积分与其边界面上的曲面积分关系
 

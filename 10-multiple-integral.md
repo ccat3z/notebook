@@ -6,6 +6,8 @@
 
 ## 二重积分
 
+`重点!二重积分`{.idx}
+
 $$\iint _ {D} f(x, y) d\sigma$$
 
 ### 换元法
@@ -18,6 +20,8 @@ $$\iint _ {D} f(x, y) dx dy = \iint _ {D^{'}} f (x(u, v), y(u, v)) |J(u, v)| dud
 
 
 ## 三重积分
+
+`重点!三重积分`{.idx}
 
 $$\iiint _ {\Omega} f(x, y, z) dv$$
 
