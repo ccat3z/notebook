@@ -85,6 +85,28 @@ $$\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy =
 :::
 
 ::: {.example}
+$\int_{(0, 0)}^{(a, b)} xe^{x^2 + y^2} dx + ye^{x^2 + y^2} dy$
+
+令$P = xe^{x^2 + y^2}$, $Q = ye^{x^2 + y^2}$,
+
+\begin{align*}
+\frac{\partial P}{\partial y} = 2xye^{x^2 + y^2} \\
+\frac{\partial Q}{\partial x} = 2xye^{x^2 + y^2}
+\end{align*}
+
+所以在实数域内与曲线路径无关
+
+取路径$(0, 0) \rightarrow (a, 0) \rightarrow (a, b)$
+
+\begin{align*}
+\int_{(0, 0)}^{(a, b)} xe^{x^2 + y^2} dx + ye^{x^2 + y^2} dy &= \int_{(0, 0)}^{(a, 0)} xe^{x^2 + y^2} dx + ye^{x^2 + y^2} dy + \int_{(a, 0)}^{(a, b)} xe^{x^2 + y^2} dx + ye^{x^2 + y^2} dy \\
+&= \int_0^a xe^{x^2} dx + \int_0^b ye^{a^2 + y^2} dy \\
+&= \left. \frac{1}{2} e^{x^2} \right| _0^a + \left. \frac{1}{2} e^{a^2 + y^2} \right| _0^b \\
+&= \frac{1}{2} (-1 + e^{a^2})
+\end{align*}
+:::
+
+::: {.example}
 $xe^{x^2 + y^2} dx + ye^{x^2 + y^2} dy$是否是某个函数全微分
 
 令$P = xe^{x^2 + y^2}$, $Q = ye^{x^2 + y^2}$,
