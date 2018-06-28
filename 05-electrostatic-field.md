@@ -48,13 +48,31 @@
    : $V = \begin{cases} \frac{1}{4 \pi\varepsilon_0} \frac{Q}{R} & r \leq R \\ \frac{1}{4 \pi\varepsilon_0} \frac{Q}{r} & r > R\end{cases}$
 
    ::: {.example}
-   半径为R, 均匀带电为Q的球面
+   半径为R, 均匀带电为Q的球面, 求电场强度, 球内任意两点电势差, 球外任意两点电势差, 球内任意点电势, 球外任意点电势
 
-   以$r$为半径作一球面$O$,
+   1. 电场强度
 
-   **当$r \leq R$时**, $O$内$\sum q = 0$, $E \times 4\pi r^2 = 0$
+      以$r$为半径作一球面$O$,
 
-   **当$r > R$时**, O内$\sum q = Q$, $E \times 4\pi r^2 = \frac{Q}{\varepsilon_0} \Rightarrow E = \frac{Q}{4\pi\varepsilon_0 r^2}$
+      **当$r \leq R$时**, $O$内$\sum q = 0$, $E \times 4\pi r^2 = 0$
+
+      **当$r > R$时**, O内$\sum q = Q$, $E \times 4\pi r^2 = \frac{Q}{\varepsilon_0} \Rightarrow E = \frac{Q}{4\pi\varepsilon_0 r^2}$
+
+   1. 球内两点电势差
+    
+      $$E = 0 \Rightarrow U_{AB} = 0$$
+
+   1. 球外两点电势差
+
+      $$U_{AB} = \int_A^B \frac{1}{4\pi\varepsilon_0} \frac{Q}{r^2} = \frac{Q}{4\pi\varepsilon_0} (\frac{1}{r_A} - \frac{1}{r_B})$$
+
+   1. 球外任意点电势
+
+      $$V(r) = U_{r\infty} = \frac{Q}{4\pi\varepsilon_0 r}$$
+
+   1. 球内任意点电势
+
+      $$V(r) = V(R) = \frac{Q}{4\pi\varepsilon_0 R}$$
    :::
 
 1. 无限均匀带电直线

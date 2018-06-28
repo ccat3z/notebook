@@ -29,6 +29,33 @@
 * 空腔导体屏蔽外电场
 * 接地空腔导体屏蔽内电场
 
+## 电介质中的高斯定理
+
+极化电荷密度
+: $\sigma^{'}$
+
+电极化密度
+: $\vec{P} = (\varepsilon_r - 1)\varepsilon_0 \vec{E}$
+
+    两平板间$P = \sigma^{'}$
+
+电位移
+: $\vec{D} = \varepsilon_0 \varepsilon_r \vec{E}$
+
+电介质中的高斯定理
+: $\oint_S \vec{D} \cdot d\vec{S} = Q_0$
+
+![](./images/conductors-and-dielectrics/example-01.jpg)
+
+![](./images/conductors-and-dielectrics/example-02.jpg)
+
 ## 电容
 
-C = $\frac{Q}{V}$
+孤立导体电容
+: $C = \frac{Q}{V}$
+
+电容器(两导体)
+: $C = \frac{Q}{U}$
+
+平板电容器
+: $C = \frac{\varepsilon_0 \varepsilon_r S}{d}$
