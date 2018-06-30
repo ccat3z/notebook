@@ -4,120 +4,151 @@
 
 # 随机变量及其分布
 
-## 随机变量
+`分布函数`{.idx}
 
-<div latex="true" class="define" args="随机变量">
-  设随机实验的样本空间为$S = \{\mathit{e}\}$, $X = X(\mathit{e})$是定义在样本空间$S$上的实值单值函数. 称\underline{$X = X(\mathit{e})$}为随机变量
-</div>
+分布函数$F$
+: 设$X$是一个随机变量, $x$是任意实数, 函数$F(x) = P\{X \leq x\}, -\infty < x < \infty$
 
-## 离散型随机变量及其分布律
+## 离散型随机变量
 
-### 分布律$P$表示形式
-
-* $P\{X = x_k\} = p_k, k = 1, 2, 3, \ldots$
-* 
-  \begin{tabular}{c|ccc}
-      X & $x_1$ & $x_2$ & $x_3$ \\ \hline
-      $p_k$ & $p_1$ & $p_2$ & $p_3$
-  \end{tabular}
-
-### 重要离散型随机变量
+`离散性随机变量!(0 - 1)分布`{.idx}
 
 1. $(0 - 1)$分布
 
-    设随机变量只可能取$0$和$1$两个值, 它的分布律为
-    $$P\{X = k\} = p^k (1 - p)^{1 - k}, k = 0, 1 (0 < p <1)$$
-    表格形式为
-    \begin{center}
-        \begin{tabular}{c|cc}
-            X & $0$ & $1$ \\ \hline
-            $p_k$ & $1 - p$ & $p$
-        \end{tabular}
-    \end{center}
+   随机变量只可能取$0$和$1$两个值, 
 
-    对于样本空间$S = {e_1, e_2}$都能用$(0 - 1)$分布的随机变量来描述
+   `分布律`{.idx}
+ 
+   分布律
+   : $P\{X = k\} = p^k (1 - p)^{1 - k}, k = 0, 1 (0 < p <1)$
 
-1. 伯努利试验, 二项分布
+   `分布律表格`{.idx}
 
-    伯努利试验
-    : 只有两个可能结果的实验: $A$ 及 $\bar{A}$
+   分布律表格
+   : 
 
-       设$P(A) = p\ (0 < p < 1)$, 则$P(\bar{A}) = 1 - p$
+       \begin{center}
+           \begin{tabular}{c|cc}
+               X & $0$ & $1$ \\ \hline
+               $p_k$ & $1 - p$ & $p$
+           \end{tabular}
+       \end{center}
 
-    n重伯努利试验
-    : 将**伯努力实验**重复$n$次
+1. 伯努利试验, 二项分布: $X \sim b(n, p)$
 
+   `离散性随机变量!二项分布`{.idx} `伯努力试验`{.idx} `n重伯努力试验`{.idx}
 
-    二项分布
-    : 随机变量$X$表示$n$重伯努利试验中$A$发生的次数, $X$服从参数为$n$, $p$的二项分布, 记作$X \sim b(n, p)$
+   伯努利试验
+   : 只有两个可能结果的实验: $A$ 及 $\bar{A}$
 
-    $$P\{X = k\} = \vectornum{n}{k} p^k q^{n - k}$$
+      设$P(A) = p\ (0 < p < 1)$, 则$P(\bar{A}) = 1 - p$
 
-1. 泊松分布
+   n重伯努利试验
+   : 将**伯努力实验**重复$n$次
 
-    设随机变量可能取的值为$0, 1, 2, \ldots$, 而取各个值的概率为
+   二项分布
+   : 随机变量$X$表示$n$重伯努利试验中$A$发生的次数, $X$服从参数为$n$, $p$的二项分布
 
-    $$P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!}, k = 0, 1, 2, \ldots$$
-    
-    其中$\lambda > 0$是常数, 则称$X$服从参数为$\lambda$的泊松分布, 记作$X \sim \pi(\lambda)$
+   分布律
+   : $P\{X = k\} = \vectornum{n}{k} p^k q^{n - k}$
 
-#### 泊松分布
+1. 泊松分布: $X \sim \pi(\lambda)$
 
-::: {.mthm latex="true" args="泊松定理"}
-$$\lim_{n -> \infty} \vectornum{n}{k} p^k_n (1 - p_n)^{n - k} = \frac{\lambda^k e^{-\lambda}}{k!}, \lambda = np_n$$
-由此可知, $n$很大, $p$很小时， 二项分布可以由此近似
-$$\vectornum{n}{k} p^k_n (1 - p_n)^{n - k} \approx \frac{\lambda^k e^{-\lambda}}{k!}, \lambda = np_n$$
-:::
+   `离散性随机变量!泊松分布`{.idx}
 
-## 随机变量的分布函数
+   随机变量可能取的值为$0, 1, 2, \ldots$
 
-分布函数$F$
-: 设$X$是一个随机变量, $x$是任意实数, 函数
-$$F(x) = P\{X \leq x\}, -\infty < x < \infty$$
+   分布律: $P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!}, k = 0, 1, 2, \ldots$
+ 
+   其中$\lambda > 0$是常数, 则称$X$服从参数为$\lambda$的泊松分布
 
-## 连续型随机变量及其概率密度
+   `泊松定理`{.idx}
+
+   ::: {.mthm latex="true" args="泊松定理"}
+   $$\lim_{n -> \infty} \vectornum{n}{k} p^k_n (1 - p_n)^{n - k} = \frac{\lambda^k e^{-\lambda}}{k!}, \lambda = np_n$$
+   由此可知, $n$很大, $p$很小时， 二项分布可以由此近似
+   $$\vectornum{n}{k} p^k_n (1 - p_n)^{n - k} \approx \frac{\lambda^k e^{-\lambda}}{k!}, \lambda = np_n$$
+   :::
+
+   `重点!泊松定理证明`{.idx}
+
+   ::: {.example}
+   证明泊松定理
+
+   由$p_n = \frac{\lambda}{n}$可得:
+
+   \begin{align*}
+   \vectornum{n}{k} p_n^k (1 - p_n)^{n - k} &= \frac{n (n - 1) \ldots (n - k + 1)}{k!} (\frac{\lambda}{n})^k (1 - \frac{\lambda}{n})^{n - k} \\
+   &= \frac{\lambda^k}{k!} [1 \cdot \frac{n - 1}{n} \ldots \frac{n - k + 1}{n}] (1 - \frac{\lambda}{n})^{n - k} \\
+   \end{align*}
+
+   当$n \rightarrow \infty$时: $[1 \cdot \frac{n - 1}{n} \ldots \frac{n - k + 1}{n}] \rightarrow 1$, $(1 - \frac{\lambda}{n})^{n - k} \rightarrow e^{-\lambda}$
+
+   即$\lim_{n \rightarrow \infty} \vectornum{n}{k} p_n^k (1 - p_n)^{n - k} = \frac{\lambda^k e^{-\lambda}}{k!}$
+   :::
+
+## 连续型随机变量
+
+`概率密度函数`{.idx}
 
 对与随机变量$X$分布函数$F(X)$, 存在非负函数$f(x)$, 使
 $$F(x) = \int^x_{-\infty} f(t) dt$$
 成了, $X$为**连续性随机变量**, $f(x)$为**概率密度函数**, 简称**概率密度**
 
-### 重要连续型随机变量
+1. 均匀分布: $X \sim U(a, b)$
 
-1. 均匀分布, $X \sim U(a, b)$
+   `连续性随机变量!均匀分布`{.idx}
 
-    概率密度为:
-    $$f(x) =
-    \begin{cases}
-        \dfrac{1}{b - a} & a < x < b \\
-        0 & \text{其他}
-    \end{cases}
-    $$
+   概率密度
+   : $f(x) = \begin{cases} \dfrac{1}{b - a} & a < x < b \\ 0 & \text{其他} \end{cases}$
 
-    由此可得分布函数为:
-    $$F(x) = 
-    \begin{cases}
-        0 & x < a \\
-        \dfrac{x - a}{b - a} & a \leq x < b \\
-        1 & x \geq b
-    \end{cases}
-    $$
+   分布函数
+   : $F(x) = \begin{cases} 0 & x < a \\ \dfrac{x - a}{b - a} & a \leq x < b \\ 1 & x \geq b \end{cases}$
 
 1. 指数分布
 
-    概率密度为:
-    $$f(x) =
-    \begin{cases}
-        \dfrac{1}{\theta} e^{-\frac{x}{\theta}} & x > 0 \\
-        0 & \text{其他}
-    \end{cases}
-    $$
+   `连续性随机变量!指数分布`{.idx}
 
-    由此可得分布函数为:
-    $$F(x) =
-    \begin{cases}
-        1 - e^{-\frac{x}{\theta}} & x > 0 \\
-        0 & \text{其他}
-    \end{cases}
-    $$
+   概率密度
+   : $f(x) = \begin{cases} \dfrac{1}{\theta} e^{-\frac{x}{\theta}} & x > 0 \\ 0 & \text{其他} \end{cases}$
 
-    无记忆性
+   分布函数
+   : $F(x) = \begin{cases} 1 - e^{-\frac{x}{\theta}} & x > 0 \\ 0 & \text{其他} \end{cases}$
+
+   无记忆性
+   : $P\{X > s + t \mid X > s\} = P{X > t}$
+
+1. 正态分布: $X \sim N(\mu, \sigma^2)$
+
+   `连续性随机变量!正态分布`{.idx}
+
+   概率密度
+   : $f(x) = \frac{1}{\sqrt{2\pi} \sigma} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$
+
+   分布函数
+   : $F(x) = \frac{1}{\sqrt{2\pi} \sigma} \int_{-\infty}^{x} e^{-\frac{(x - \mu)^2}{2\sigma^2}} dt$
+
+1. 标准正态分布: $X \sim N(0, 1^2)$
+
+   `连续性随机变量!标准正态分布`{.idx}
+
+   概率密度
+   : $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{\frac{-x^2}{2}}$
+
+   分布函数
+   : $\Phi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{x} e^{-\frac{t^2}{2}} dt$
+
+       $1 - \Phi(x) = \Phi(-x)$
+
+   转化为标准正态分布
+   : 若$X \sim N(\mu, \sigma^2)$, $Z = \frac{X - \mu}{\sigma} \sim N(0, 1)$
+
+       ::: {.example}
+       $X \sim N(90, 0.5^2)$, 求$P\{X < 89\}$
+
+       \begin{align*}
+       P\{X < 89\} &= P\{\frac{X - 90}{0.5} < \frac{89 - 90}{05}\} \\
+       &= \Phi(\frac{89 -90}{0.5}) \\
+       &= 0.0228
+       \end{align*}
+       :::
