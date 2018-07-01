@@ -27,12 +27,10 @@
    分布律表格
    : 
 
-       \begin{center}
-           \begin{tabular}{c|cc}
-               X & $0$ & $1$ \\ \hline
-               $p_k$ & $1 - p$ & $p$
-           \end{tabular}
-       \end{center}
+      \begin{tabular}{c|cc}
+          X & $0$ & $1$ \\ \hline
+          $p_k$ & $1 - p$ & $p$
+      \end{tabular}
 
 1. 伯努利试验, 二项分布: $X \sim b(n, p)$
 
@@ -58,8 +56,15 @@
 
    随机变量可能取的值为$0, 1, 2, \ldots$
 
-   分布律: $P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!}, k = 0, 1, 2, \ldots$
- 
+   分布律
+   : $P\{X = k\} = \frac{\lambda^k e^{-\lambda}}{k!}, k = 0, 1, 2, \ldots$
+
+   数学期望
+   : $E(X) = \lambda$
+
+   方差
+   : $D(X) = E(X^2) - [E(X)]^2 = [E(X(X - 1)) + E(X)] - \lambda^2 = \sum_{k = 0}^{\infty} k(k - 1) \frac{\lambda^k e^{-\lambda}}{k!} + \lambda - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda$
+
    其中$\lambda > 0$是常数, 则称$X$服从参数为$\lambda$的泊松分布
 
    `泊松定理`{.idx}
@@ -93,7 +98,7 @@
 
 对与随机变量$X$分布函数$F(X)$, 存在非负函数$f(x)$, 使
 $$F(x) = \int^x_{-\infty} f(t) dt$$
-成了, $X$为**连续性随机变量**, $f(x)$为**概率密度函数**, 简称**概率密度**
+成了, $X$为**连续性随机变量**, $f(x)$为**概率密度函数**, 简称**概率密度**, 概率密度函数可以大于1
 
 1. 均匀分布: $X \sim U(a, b)$
 
@@ -104,6 +109,12 @@ $$F(x) = \int^x_{-\infty} f(t) dt$$
 
    分布函数
    : $F(x) = \begin{cases} 0 & x < a \\ \dfrac{x - a}{b - a} & a \leq x < b \\ 1 & x \geq b \end{cases}$
+
+   数学期望
+   : $E(X) = \frac{a + b}{2}$
+
+   方差
+   : $D(X) = E(X^2) - [E(X)]^2 = \int_{a}^{b} x^2 \frac{1}{b - a} dx - (\frac{a + b}{2})^2 = \frac{(b - a)^2}{12}$
 
 1. 指数分布
 
@@ -127,6 +138,12 @@ $$F(x) = \int^x_{-\infty} f(t) dt$$
 
    分布函数
    : $F(x) = \frac{1}{\sqrt{2\pi} \sigma} \int_{-\infty}^{x} e^{-\frac{(x - \mu)^2}{2\sigma^2}} dt$
+
+   数学期望
+   : $\mu$
+
+   方差
+   : $\sigma^2$
 
 1. 标准正态分布: $X \sim N(0, 1^2)$
 
@@ -152,3 +169,20 @@ $$F(x) = \int^x_{-\infty} f(t) dt$$
        &= 0.0228
        \end{align*}
        :::
+
+## 随机变量的函数的分布
+
+::: {.example}
+随机变量$X$具有概率密度$f_X(x), -\infty < x \infty$, 求$Y = X^2$的概率密度
+
+\begin{align*}
+F_Y(y) &= P\{Y \leq y\} = P\{X^2 \leq y\} \\
+&= P\{-\sqrt{y} \leq X \leq \sqrt{Y}\} \\
+&= F_X(\sqrt{y}) - F_X(-\sqrt{y})
+\end{align*}
+
+$$f_Y(y) = \begin{cases}
+\frac{1}{2\sqrt{y}} [f_X(\sqrt{y}) + f_X(-\sqrt{y})], & y > 0 \\
+0, & y \leq 0
+\end{cases}$$
+:::
