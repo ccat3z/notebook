@@ -50,6 +50,12 @@
    分布律
    : $P\{X = k\} = \vectornum{n}{k} p^k q^{n - k}$
 
+   数学期望
+   : $E(X) = p$
+
+   方差
+   : $D(X) = p(1 - p)$
+
 1. 泊松分布: $X \sim \pi(\lambda)$
 
    `离散性随机变量!泊松分布`{.idx}
@@ -169,6 +175,9 @@ $$F(x) = \int^x_{-\infty} f(t) dt$$
        &= 0.0228
        \end{align*}
        :::
+
+   上$\alpha$分位点
+   : $P\{X > z_{\alpha}\} = \alpha, 0 < \alpha < 1$
 
 ## 随机变量的函数的分布
 
