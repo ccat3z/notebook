@@ -133,7 +133,7 @@ $$F(x) = \int^x_{-\infty} f(t) dt$$
    : $F(x) = \begin{cases} 1 - e^{-\frac{x}{\theta}} & x > 0 \\ 0 & \text{其他} \end{cases}$
 
    无记忆性
-   : $P\{X > s + t \mid X > s\} = P{X > t}$
+   : $P\{X > s + t \mid X > s\} = P\{X > t\}$
 
 1. 正态分布: $X \sim N(\mu, \sigma^2)$
 
@@ -182,7 +182,7 @@ $$F(x) = \int^x_{-\infty} f(t) dt$$
 ## 随机变量的函数的分布
 
 ::: {.example}
-随机变量$X$具有概率密度$f_X(x), -\infty < x \infty$, 求$Y = X^2$的概率密度
+随机变量$X$具有概率密度$f_X(x), -\infty < x < \infty$, 求$Y = X^2$的概率密度
 
 \begin{align*}
 F_Y(y) &= P\{Y \leq y\} = P\{X^2 \leq y\} \\
