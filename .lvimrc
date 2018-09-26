@@ -1,8 +1,9 @@
-noremap <F9> :AsyncRun ./build.sh <cr>
-noremap <F10> :AsyncRun ./build.sh %:t <cr>
+let build = expand('<sfile>:p:h') . '/build.sh'
+nmap <F9> :execute 'AsyncRun' . build <cr>
+nmap <F10> :execute 'AsyncRun' . build . ' %:t' <cr>
 if !exists("auto_build_on_write")
     let auto_build_on_write = 1
-    au BufWritePost *.md :AsyncRun ./build.sh %:t
+    au BufWritePost *.md :execute 'AsyncRun' . build .  ' %:t'
 endif
 set nowrap
 set nocursorcolumn

@@ -1,7 +1,9 @@
 #!/bin/sh
 
+export NOTE_ROOT=$(realpath $(dirname $0))
+
 export OLD_PATH="$PATH"
-export PATH="./bin:$PATH"
+export PATH="$NOTE_ROOT/bin:$PATH"
 
 if [ -n "$1" ]; then
     FILES="$1"
@@ -11,4 +13,13 @@ else
     OUT="out"
 fi
 
-pandoc --pdf-engine=xelatex --pdf-engine-opt=-shell-escape --template template.tex --top-level-division=chapter --filter example.py --filter latexdivs.py --filter makeindex.py --data-dir . ${FILES} -o ${OUT}.pdf
+pandoc \
+    --pdf-engine=xelatex \
+    --pdf-engine-opt=-shell-escape \
+    --template $NOTE_ROOT/template.tex \
+    --top-level-division=chapter \
+    --filter example.py \
+    --filter latexdivs.py \
+    --filter makeindex.py \
+    --data-dir $NOTE_ROOT \
+    ${FILES} -o ${OUT}.pdf

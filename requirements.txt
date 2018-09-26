@@ -1,3 +1,0 @@
-pandocfilters
-pypinyin
-neovim
