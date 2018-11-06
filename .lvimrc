@@ -1,9 +1,10 @@
 let build = expand('<sfile>:p:h') . '/build.sh'
 nmap <F9> :execute 'AsyncRun' . build <cr>
-nmap <F10> :execute 'AsyncRun' . build . ' %:t' <cr>
+nmap <F10> :execute 'AsyncRun' . build . ' %' <cr>
+nmap <F5> :execute 'AsyncRun xdg-open' . ' %:r' . '.pdf' <cr>
 if !exists("auto_build_on_write")
     let auto_build_on_write = 1
-    au BufWritePost *.md :execute 'AsyncRun' . build .  ' %:t'
+    au BufWritePost *.md :execute 'AsyncRun' . build . ' %'
 endif
 set nowrap
 set nocursorcolumn
