@@ -21,5 +21,6 @@ pandoc \
     --filter example.py \
     --filter latexdivs.py \
     --filter makeindex.py \
+    --filter python.py \
     --data-dir $NOTE_ROOT \
     ${FILES} -o ${OUT}.pdf
