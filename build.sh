@@ -18,6 +18,7 @@ pandoc \
     --pdf-engine-opt=-shell-escape \
     --template $NOTE_ROOT/template.tex \
     --top-level-division=chapter \
+    --filter center.py \
     --filter example.py \
     --filter latexdivs.py \
     --filter makeindex.py \
