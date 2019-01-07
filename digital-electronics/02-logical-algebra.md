@@ -48,9 +48,8 @@
 
   $$\begin{aligned}
     L &= AC + \widebar{C}D & \text{与-或表达式} \\
-      &= \overline{\overline{AC} \cdot \overline{\overline{C}D}} & \text{与非-与非表达式}
-      &= (A + \widebar{C})(C + D) & \text{或-与表达式}
-      &=
+      &= \overline{\overline{AC} \cdot \overline{\overline{C}D}} & \text{与非-与非表达式} \\
+      &= (A + \widebar{C})(C + D) & \text{或-与表达式} \\
   \end{aligned}$$
 
 * 卡诺图化简

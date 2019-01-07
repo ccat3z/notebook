@@ -36,5 +36,7 @@
   * 5421 `BCD!5421`{.idx}
 * 无权码
   * 余3码 (8421码 + 3) `BCD!余3码`{.idx}
-  * 余3循环码 (格雷码首位去除) `BCD!余3循环码`{.idx}
-  * 格雷码 (8421互转? P27) `BCD!格雷码`{.idx}
+  * 余3循环码 (格雷码首尾去除3位) `BCD!余3循环码`{.idx}
+  * 格雷码 `BCD!格雷码`{.idx}
+    * 8421转BCD: `map (\a prev -> a + prev)`{.haskell} ($1011 \rightarrow 1110$))
+    * BCD转8421: `foldl (\acc a -> (acc:(acc[-1] + a)))`{.haskell} ($1101 \rightarrow 1001$)
