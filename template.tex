@@ -26,6 +26,7 @@
 \makeindex
 \usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
 \usepackage{mathabx}
+\usepackage[margin=80pt]{geometry}
 
 $if(highlighting-macros)$
     $highlighting-macros$
@@ -80,6 +81,19 @@ $endif$
 \newcommand{\leftouterjoin}{\mathrel{\ojoin\mkern-8mu\Join}}
 \newcommand{\rightouterjoin}{\mathrel{\Join\mkern-8mu\ojoin}}
 \newcommand{\fullouterjoin}{\mathrel{\ojoin\mkern-8mu\Join\mkern-8mu\ojoin}}
+
+\ctexset{
+  chapter = {
+    format = \huge\bfseries\raggedright{},
+    name = {},
+    number = \thechapter,
+    beforeskip = 0pt,
+    fixskip = true
+  },
+  section/format += \sffamily\raggedright{}
+}
+
+\pagestyle{empty}
 
 \begin{document}
 $body$
