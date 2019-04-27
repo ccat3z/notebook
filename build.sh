@@ -23,5 +23,6 @@ pandoc \
     --filter latexdivs.py \
     --filter makeindex.py \
     --filter python.py \
+    --filter plantuml.py \
     --data-dir $NOTE_ROOT \
     ${FILES} -o ${OUT}.pdf
