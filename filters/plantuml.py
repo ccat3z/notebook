@@ -24,9 +24,9 @@ g = {'output': None}
 
 
 def get_image(src):
-    outfilename = str(get_filename4code('temp-plantuml', src, 'svg'))
+    outfilename = str(get_filename4code('temp-plantuml', src, 'png'))
     file = open(outfilename, 'w')
-    p = subprocess.Popen(['plantuml', '-p', '-tsvg'], stdin=subprocess.PIPE, stdout=file)
+    p = subprocess.Popen(['plantuml', '-p', '-tpng'], stdin=subprocess.PIPE, stdout=file)
     p.stdin.write(src.encode('UTF-8'))
     p.communicate()
     p.stdin.close()
