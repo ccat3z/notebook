@@ -82,6 +82,9 @@ $endif$
 \newcommand{\rightouterjoin}{\mathrel{\Join\mkern-8mu\ojoin}}
 \newcommand{\fullouterjoin}{\mathrel{\ojoin\mkern-8mu\Join\mkern-8mu\ojoin}}
 
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
 \ctexset{
   chapter = {
     format = \huge\bfseries\raggedright{},
@@ -94,6 +97,11 @@ $endif$
 }
 
 \pagestyle{empty}
+
+$if(title)$
+\title{$title$}
+\hypersetup{pdftitle=$title$}
+$endif$
 
 \begin{document}
 $body$
