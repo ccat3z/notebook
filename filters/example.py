@@ -3,7 +3,7 @@
 """
 latex example environment
 e.g.
-<div example="true">
+<div class="example">
 Q...
 
 A...
