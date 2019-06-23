@@ -166,3 +166,5 @@ mutex | `lock(mutex)`{.c} | `unlock(mutex)`{.c}
 1. 最短剩余时间优先 (抢占式最短作业优先)
 1. 时间片轮轮转调度
 1. 优先级调度
+1. CTSS: 1 2 3 8 16
+1. 老化算法: `foldl (\acc x -> acc * a + x * (1-a))`{.haskell}
