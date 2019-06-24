@@ -1,6 +1,6 @@
-<!--
-    vi: ft=pandoc.markdown
--->
+---
+title: 算法
+...
 
 # 复习
 
@@ -190,3 +190,7 @@ def definite_integral(f, n = 100000):
             k += 1
     return k / n
 ```
+
+<!--
+    vi: ft=pandoc.markdown
+-->
