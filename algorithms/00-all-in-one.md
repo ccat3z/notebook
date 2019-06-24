@@ -83,7 +83,7 @@ $min[i:j] = \left\{ \begin{array}{ll} 0 & i = j\\ min\{min[i:k] + min[k+1:j] + p
 
 #### 流水作业调度
 
-1. $N_1 = { i \mid a_i < b_i }$, $N_2 = { i \mid a_i \geq b_i }$
+1. $N_1 = \{ i \mid a_i < b_i \}$, $N_2 = \{ i \mid a_i \geq b_i \}$
 2. $N_1$按$a_i$非减序, $N_2$按$b_i$非增序
 3. 一个个来
 
