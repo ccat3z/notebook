@@ -1,8 +1,6 @@
 #!/bin/sh
 
 NOTE_ROOT=$(realpath "$(dirname "$0")")
-
-export OLD_PATH="$PATH"
 export PATH="$NOTE_ROOT/bin:$PATH"
 
 if [ -n "$1" ]; then
