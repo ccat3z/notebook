@@ -1,0 +1,28 @@
+#! /bin/bash
+
+#
+# cd $TEXINPUTS and exec
+#
+
+BASENAME="$(basename "$0")"
+DIRNAME="$(dirname "$(realpath -s "$0")")"
+REAL_BASENAME="$(basename "$(realpath "$0")")"
+
+if [ "$BASENAME" == "$REAL_BASENAME" ]; then
+    exec "$@"
+fi
+
+PATH="$(echo "$PATH" | tr ':' '\n' | grep -v "$DIRNAME" | tr '\n' ':')"
+if diff "$0" "$(which "$BASENAME")" ;then
+    echo "Loop detected" >&2
+    exit 1
+fi
+
+FIRST_TEXINPUT="${TEXINPUTS//:*/}"
+if [ -z "$FIRST_TEXINPUT" ]; then
+    echo "TEXINPUTS is not defined" >&2
+    exit 1
+fi
+
+cd "${FIRST_TEXINPUT}" || exit 1
+exec $BASENAME "$@"

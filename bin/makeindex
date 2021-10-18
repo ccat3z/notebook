@@ -1,8 +1,1 @@
-#! /bin/sh
-
-[ ! -n "$OLD_PATH" ] && exit
-
-export PATH=$OLD_PATH
-
-cd $(echo ${TEXINPUTS} | sed 's/:$//')
-makeindex $@
+run-in-texinputs
