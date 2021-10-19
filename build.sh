@@ -23,4 +23,4 @@ pandoc \
     --filter python.py \
     --filter plantuml.py \
     --data-dir "$NOTE_ROOT" \
-    "${FILES}" -o "${OUT}.pdf"
+    ${FILES} -o "${OUT}.pdf"
