@@ -1,73 +1,21 @@
 \documentclass[oneside, 12pt, a4paper, fontset=fandol]{ctexbook}
 
+% misc
+\usepackage{ulem}
+\usepackage{stackengine}
+\usepackage{scalerel}
+\usepackage{framed}
+
+% math and symbols
 \usepackage{amsmath}
-\usepackage{subfiles}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage{bm}
-\usepackage{tikz}
 \usepackage{mathrsfs}
-\usepackage{ulem}
-\usetikzlibrary{arrows}
-\usetikzlibrary{circuits.logic.US}
-\usetikzlibrary{calc}
-\usetikzlibrary{patterns}
-\usetikzlibrary{automata}
-\usepackage{longtable}
-\usepackage{booktabs}
-\usepackage{stackengine}
-\usepackage{scalerel}
-\usepackage{pstricks-add}
+\usepackage{bm}
 \usepackage{esint}
-\usepackage{framed}
-\usepackage[makeindex]{imakeidx}
-\usepackage{makeidx}
-\makeindex
-\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
 \usepackage{mathabx}
-\usepackage[margin=80pt]{geometry}
-\usepackage{tabularx}
-\usepackage{float}
-
-$if(highlighting-macros)$
-    $highlighting-macros$
-$endif$
-
-\newcommand{\vectornum}[2]{\left(\begin{matrix}{#1}\\{#2}\end{matrix}\right)}
-\newcommand{\smallvectornum}[2]{\left(\begin{smallmatrix}{#1}\\{#2}\end{smallmatrix}\right)}
-
-\newcounter{thm}[section]
-\renewcommand\thethm{\thesection.\arabic{thm}}
-\theoremstyle{definition}
-\newtheorem{define}[thm]{定义}
-\newtheorem*{define*}{定义}
-\newtheorem{mthm}[thm]{定理}
-\newtheorem*{mthm*}{定理}
-\newtheorem{prop}[thm]{性质}
-\newtheorem*{prop*}{性质}
-
-\newcounter{example}[section]
-\renewcommand\theexample{\thesection.\arabic{example}}
-\newenvironment{example}[1]{\stepcounter{example}%
-    \noindent\textbf{例\theexample} #1 \\ \textbf{解}\ }{}
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-\usepackage{graphicx,grffile}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-
-\newcommand{\figref}[1]{(图\ref{#1})}
-\newcommand{\inlineps}[1]{\parbox[c]{3em}{\fbox{\psscalebox{0.5}{\begin{pspicture*}(-1,-1)(1,1)#1\end{pspicture*}}}}}
 
 \stackMath
 \newcommand\reallywidehat[1]{%
@@ -86,26 +34,115 @@ $endif$
 \newcommand{\rightouterjoin}{\mathrel{\Join\mkern-8mu\ojoin}}
 \newcommand{\fullouterjoin}{\mathrel{\ojoin\mkern-8mu\Join\mkern-8mu\ojoin}}
 
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
+\newcommand{\vectornum}[2]{\left(\begin{matrix}{#1}\\{#2}\end{matrix}\right)}
+\newcommand{\smallvectornum}[2]{\left(\begin{smallmatrix}{#1}\\{#2}\end{smallmatrix}\right)}
+
+% plot
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{circuits.logic.US}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+\usetikzlibrary{automata}
+
+% list
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% table
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+% floating object
+\usepackage{float}
+
+% picture
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+\newcommand{\figref}[1]{(图\ref{#1})}
+\newcommand{\inlineps}[1]{\parbox[c]{3em}{\fbox{\psscalebox{0.5}{\begin{pspicture*}(-1,-1)(1,1)#1\end{pspicture*}}}}}
+
+% color support
+\usepackage{xcolor}
+
+% code highlight
+$if(highlighting-macros)$
+    $highlighting-macros$
+$endif$
+
+% index
+\usepackage[makeindex]{imakeidx}
+\usepackage{makeidx}
+\makeindex
+
+% file misc
+\usepackage{subfiles}
+
+% page style
+\usepackage[margin=1.5cm]{geometry}
 
 \ctexset{
   chapter = {
-    format = \huge\bfseries\raggedright{},
+    format = \color[HTML]{1e88e5}\large\sffamily\bfseries\raggedright{},
     name = {},
     number = \thechapter,
     beforeskip = 0pt,
+    afterskip = 30pt,
     fixskip = true
   },
-  section/format += \sffamily\raggedright{}
+  section = {
+    format = \color[HTML]{1e88e5}\large\sffamily\raggedright{},
+    afterskip = 1.5ex plus .2ex,
+  },
+  subsection = {
+    format = \color[HTML]{1e88e5}\normalsize\sffamily\raggedright{}
+  },
+  subsubsection = {
+    format = \color[HTML]{1e88e5}\normalsize\sffamily\raggedright{}
+  }
 }
-
 \pagestyle{empty}
 
+% pdf output support
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
 $if(title)$
-\title{$title$}
 \hypersetup{pdftitle=$title$}
 $endif$
+
+% ps output support
+\usepackage{pstricks-add}
+
+% theorems
+\newcounter{thm}[section]
+\renewcommand\thethm{\thesection.\arabic{thm}}
+\theoremstyle{definition}
+\newtheorem{define}[thm]{定义}
+\newtheorem*{define*}{定义}
+\newtheorem{mthm}[thm]{定理}
+\newtheorem*{mthm*}{定理}
+\newtheorem{prop}[thm]{性质}
+\newtheorem*{prop*}{性质}
+
+\newcounter{example}[section]
+\renewcommand\theexample{\thesection.\arabic{example}}
+\newenvironment{example}[1]{\stepcounter{example}%
+    \noindent\textbf{例\theexample} #1 \\ \textbf{解}\ }{}
+
+% document options
+$if(title)$
+\title{$title$}
+$endif$
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 
 \begin{document}
 $body$
