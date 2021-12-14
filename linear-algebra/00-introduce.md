@@ -72,6 +72,81 @@ $L(a_1, a_2, \ldots, a_r)$或$span(a_1,a_2,...,a_r)$
 $=$ (**`#秩`**) $rank\{a_1 , a_2 , \ldots , a_r\}$
 :::
 
+### 线性组合
+
+::: {.example}
+已知$\beta = (1, 2, 1, 1)^T$, 以及
+$\alpha_1 = (1, 1, 1, 1)^T$, $\alpha_2 = (1, 1, −1, −1)^T$,
+$\alpha_3 = (1, −1, 1, −1)^T$, $\alpha_4 = (1, −1, −1, 1)^T$.
+试将向量$\beta$表示成$\alpha1$, $\alpha2$, $\alpha3$, $\alpha4$的线性组合.
+
+假设$k_1$, $k_2$, $k_3$, $k_4$为组合系数,
+将$\beta$表示成$\alpha1$, $\alpha2$, $\alpha3$, $\alpha4$的线性组合.
+即求解:
+
+$$
+    \begin{pmatrix}
+        1 &  1 &  1 &  1 \\
+        1 &  1 & -1 & -1 \\
+        1 & -1 &  1 & -1 \\
+        1 & -1 & -1 &  1
+    \end{pmatrix}
+    \begin{pmatrix}
+        k_1 \\ k_2 \\ k_3 \\ k_4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1 \\ 2 \\ 1 \\ 1
+    \end{pmatrix}
+$$
+
+使用初等变换法求解线性方程组:
+
+\begin{multline*}
+    \begin{pmatrix}
+        1 &  1 &  1 &  1 & 1 \\
+        1 &  1 & -1 & -1 & 2 \\
+        1 & -1 &  1 & -1 & 1 \\
+        1 & -1 & -1 &  1 & 1
+    \end{pmatrix}
+    \rightarrow
+    \begin{pmatrix}
+        1 &  1 &  1 &  1 & 1 \\
+        0 &  0 & -2 & -2 & 1 \\
+        1 & -1 &  1 & -1 & 1 \\
+        0 &  0 & -2 &  2 & 0
+    \end{pmatrix}
+    \rightarrow
+    \begin{pmatrix}
+        1 &  1 &  1 &  1 & 1 \\
+        1 & -1 &  1 & -1 & 1 \\
+        0 &  0 &  1 &  0 & -\frac{1}{4} \\
+        0 &  0 &  0 &  1 & -\frac{1}{4}
+    \end{pmatrix}
+    \rightarrow \\
+    \begin{pmatrix}
+        1 &  1 &  0 &  0 & \frac{3}{2} \\
+        1 & -1 &  0 &  0 & 1 \\
+        0 &  0 &  1 &  0 & -\frac{1}{4} \\
+        0 &  0 &  0 &  1 & -\frac{1}{4}
+    \end{pmatrix}
+    \rightarrow
+    \begin{pmatrix}
+        1 &  0 &  0 &  0 & \frac{5}{4} \\
+        0 &  1 &  0 &  0 & \frac{1}{4} \\
+        0 &  0 &  1 &  0 & -\frac{1}{4} \\
+        0 &  0 &  0 &  1 & -\frac{1}{4}
+    \end{pmatrix}
+\end{multline*}
+
+可得:
+
+$$
+    \beta = \frac{5}{4}\alpha_1 + \frac{1}{4}\alpha_2
+    - \frac{1}{4}\alpha_3 - \frac{1}{4}\alpha_4
+$$
+:::
+
 ## 线性映射
 
 <!-- Lec4 -->
@@ -106,6 +181,8 @@ $\varphi: \mathbb{V} \rightarrow \mathbb{W}
 由单位矩阵$I$经过一次初等行 (列) 变换得到的矩阵称为**`#初等矩阵`**.
 :::
 
+齐次方程组通解? <!-- https://www.bilibili.com/read/cv2649977 -->
+
 #### 逆
 
 ::: {.define latex=true}
@@ -120,6 +197,10 @@ $Q_i$为初等矩阵.
 ::: {.prop latex=true}
 `逆矩阵`{.idx}
 由\ref{可逆矩阵与初等矩阵}可得: $(Q_1 Q_2 \ldots Q_m)^{-1} (A I) = (I A^{-1})$
+:::
+
+::: {.define latex=true}
+**`#广义逆`**: $(A^T A)^{-1} A^T$
 :::
 
 ## `#行列式`
@@ -329,3 +410,114 @@ $Ax = \lambda x \Rightarrow det(\lambda I - A) = 0$
 ## 内积和范数
 
 <!-- Lec6 -->
+
+### 范数
+
+::: {.define latex=true}
+**`#范数`** $||x||$ 满足:
+
+1. 非负性: $\begin{cases}||x|| > 0 & x \not= 0\\||x|| = 0 & x = 0\end{cases}$
+2. 齐次性: $||\lambda x|| = |\lambda| ||x||$
+3. 三角不等式: $||x+y|| \le ||x|| + ||y||$
+:::
+
+::: {.define latex=true}
+`lp范数`{.idx} **$l_p$范数**:
+
+$$||x||_p = (\sum_{i=1}^{n}|x_i|^p)^{\frac{1}{p}}, 1 \le p < \infty$$
+
+$l_1$范数, 1范数, Manhattan范数
+
+$l_2$范数, 2范数, 欧几里得范数
+:::
+
+::: {.define latex=true}
+$l_0 = \text{非零元素个数}$, $l_0$并不符合范数定义
+
+$l_\infty = \max_j |x_i|$
+:::
+
+### 内积
+
+::: {.define latex=true}
+**`#内积`**: $\langle \cdot, \cdot \rangle: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$, 并满足以下条件
+
+1. 非负性：$\langle x, x \rangle \ge 0, \langle x, x \rangle = 0$ 当且仅当 $x = 0$
+2. 对称性：$\langle x, y \rangle = \langle y, x \rangle$
+3. 齐次性：$\langle \lambda x, y \rangle = \lambda \langle x, y \rangle$
+4. 线性性：$\langle x + y, z \rangle = \langle x, z \rangle + \langle y, z \rangle$
+:::
+
+::: {.define latex=true}
+**`#点积`** (`#标准内积`): $\langle x, y \rangle = x^T y$
+:::
+
+### 距离
+
+::: {.define latex=true}
+**`#距离`**: $d: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$, 满足:
+
+1. 非负性: $d(x, y) \ge 0$, 且$d(x, y) = 0 \Leftrightarrow x = y$
+1. 对称性: $d(x, y) = d(y, x)$
+1. 三角不等式: $d(x, z) \le d(x, y) + d(y, z)$
+:::
+
+::: {.define latex=true}
+**`#欧式距离`**: $d(x, y) = ||x - y|| = \sqrt{\langle x - y, x - y \rangle}$.
+其中内积定义为点积.
+:::
+
+### 夹角
+
+::: {.define latex=true}
+**`#夹角`**: $\cos \theta = \frac{\langle x, y \rangle}{||x||_2 ||y||_2}$
+:::
+
+::: {.define latex=true}
+**`#正角`**: $\langle x, y \rangle = 0$,
+如果$||x|| = ||y|| = 1$, 则为**`#标准正交`**.
+:::
+
+### 矩阵内积和范数
+
+::: {.define latex=true}
+**`#向量化`**: $vec(A)$: 将$m \times n$的矩阵拉长为$mn x 1$向量
+:::
+
+::: {.define latex=true}
+**`#矩阵内积`**: $\langle A, B \rangle = \langle vec(A), vec(B) \rangle = vec(A)^T vec(B) = Tr(A^T B)$
+:::
+
+::: {.define latex=true}
+**`#广义矩阵范数`**: 和向量范数的条件类似.
+
+**`#矩阵范数`**: 附加`#相容性条件`: $||AB|| \le ||A|| ||B||$.
+:::
+
+::: {.define latex=true}
+常见矩阵范数
+
+* **$l_1$范数**: $||A||_{m_1} = \sum_{i=1}^m \sum_{j=1}^{n} |a_{ij}|$
+* **$l_2$范数**, **`#Fiobenius范数`**:
+  $||A||_{F} = (\sum_{i=1}^m \sum_{j=1}^{n} |a_{ij}|^2)^\frac{1}{2}$
+* **$l_\infty$范数** (广义): $||A||_{m_\infty} = \max |a_{ij}|$
+:::
+
+#### 算子范数
+
+::: {.define latex=true}
+相容的向量范数和矩阵范数: $||Ax||_v \le ||A||_M ||x||_v$
+:::
+
+::: {.define latex=true}
+由向量范数$||\cdot||_v$诱导出的**`#算子范数`**:
+$||A|| = \max \{ ||Ax||_v : ||x||_v = 1 \}$
+:::
+
+::: {.define latex=true}
+常见的算子范数, 对于$A \in \mathbb{R}^{m \times n}$
+
+* `#1范数`: $||A||_1 = \max_{1 \le j \le n} \sum_{i=1}^m |a_{ij}|$, 列向量的$l_1$范数最大值
+* `#∞范数`: $||A||_\infty = \max_{1 \le i \le m} \sum_{j=1}^n |a_{ij}|$, 行向量的$l_1$范数最大值
+* `#2范数`: $||A||_2 = \sqrt{\lambda_{max} (A^T A)}$
+:::
