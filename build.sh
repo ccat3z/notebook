@@ -5,6 +5,10 @@ export PATH="$NOTE_ROOT/bin:$PATH"
 
 if [ -n "$1" ]; then
     FILES="$1"
+    META_DOC="00-meta.md"
+    if [ "$1" != "$META_DOC" ] && [ -f "$META_DOC" ]; then
+        FILES="$META_DOC $1"
+    fi
     OUT="$(echo "$1" | sed 's/\.[^\.]*$//')"
 else
     FILES="$(ls ./*.md)"
