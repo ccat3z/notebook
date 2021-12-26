@@ -93,7 +93,7 @@ $$
 $b_n = a_n
 - \sum_{i=1}^{n-1}
 \frac{\langle b_i, a_n \rangle}{\langle b_i, b_i \rangle}
-b_i$
+b_i$, $q_n = \frac{b_n}{\langle b_n, b_n \rangle}$
 :::
 
 ::: {.example}
