@@ -6,7 +6,7 @@ preamble: |
         \begin{samepage}
             \vspace{1em}
             \stepcounter{problem}
-            \noindent\textbf{\heiti{习题\hspace{0em}\arabic{problem}.}}\hspace{.1em}}{\end{samepage}}
+            \noindent\textbf{习题\hspace{0em}\arabic{problem}.}\hspace{.1em}}{\end{samepage}}
     \newenvironment{solution}[1]{%
         \par\noindent\hbox to 1.6em{\textbf{#1}}}{\par}
 ...
