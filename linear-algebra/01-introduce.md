@@ -23,8 +23,17 @@
 分块矩阵乘法, 若$A$的列的分法与$B$的行的分法一致, 就和矩阵乘法一致.
 :::
 
+#### 特殊结构矩阵
+
 ::: {.define latex=true}
 **`#对称矩阵`**: $A = A^T$
+:::
+
+::: {.mthm latex=true}
+`#对称矩阵`A的性质
+
+* 存在正交矩阵$Q$使$Q^T A Q = \Lambda$, $\Lambda$是对角阵
+* 存在$n$个A的特征向量构成$\mathbb{R}^n$的一个标准正交基
 :::
 
 ::: {.define latex=true}
@@ -32,7 +41,8 @@
 :::
 
 ::: {.define latex=true}
-**`#正交矩阵`**: $A^T = A^{-1}$
+**`#正交矩阵`**: $A^T = A^{-1}$ $\Leftrightarrow$
+$A$的行向量和列向量均为单位矩阵.
 :::
 
 ::: {.define latex=true}
@@ -40,6 +50,8 @@
 **`#k阶主子式`**: 取$k$行$k$列, 行列序号相等. 
 **`#顺序主子式`**: 取$[11:11], [11:22], \ldots, [nn,nn]$.
 :::
+
+TODO: Lec 9
 
 ## 向量空间
 
@@ -178,6 +190,17 @@ $\varphi: \mathbb{V} \rightarrow \mathbb{W}
 :::
 
 齐次方程组通解? <!-- https://www.bilibili.com/read/cv2649977 -->
+
+### 常见变换
+
+TODO: Lec 8
+
+#### 旋转矩阵
+
+
+#### 反射矩阵
+
+#### 信号处理
 
 #### 逆
 
