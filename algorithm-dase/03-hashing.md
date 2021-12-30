@@ -28,14 +28,14 @@
 
 以Jaccard距离为例: $Jaccard(A, B) = \frac{|A \cap B|}{|A \cup B|}$
 
-## k-Shingling
+### k-Shingling
 
 ::: {.define latex=true}
 文本中$k$个token组成的序列.
 例如$D = abcab$, 2-Shingling为$\{ab, bc, ca\}$
 :::
 
-## Min-Hashing
+### Min-Hashing
 
 ::: {.define latex=true}
 $h_{\pi}(C) = \min_{\pi} (C)$: 随机排列Shingles, 取第一个匹配的Shingle.
@@ -45,7 +45,7 @@ $h_{\pi}(C) = \min_{\pi} (C)$: 随机排列Shingles, 取第一个匹配的Shingl
 $P(h_{\pi}(C_1) = h_{\pi}(C_2)) = Jaccard(C_1, C_2)$
 :::
 
-### 最小哈希签名(矩阵)
+#### 最小哈希签名(矩阵)
 
 ::: {.define latex=true}
 最小哈希签名:
@@ -65,7 +65,7 @@ $P(h_{\pi}(C_1) = h_{\pi}(C_2)) = Jaccard(C_1, C_2)$
 
 Table: 最小哈希签名矩阵
 
-### 基于最小哈希的局部敏感哈希
+####tfr 基于最小哈希的局部敏感哈希
 
 ::: {.define}
 将最小哈希矩阵分为b组(bands), 每组r行.

@@ -2,9 +2,9 @@
 
 ## Markov不等式
 
-- [ ] 证明?
-
 ::: {.mthm latex=true}
+非负随机变量$X$, $a > 0$
+
 $$
 P(X \ge a) \le \frac{E(X)}{a}
 $$
@@ -12,9 +12,9 @@ $$
 
 ## Chebyshev不等式
 
-- [ ] 证明?
-
 ::: {.mthm latex=true}
+随机变量$X$, $r > 0$
+
 $$
 P(|X - E(X)| \ge r) \le \frac{Var(X)}{r^2}
 $$
@@ -51,9 +51,9 @@ $$
 
 ## Chernoff不等式
 
-- [ ] 证明?
-
 ::: {.mthm latex=true}
+$X$二项分布
+
 \begin{align*}
 P(X < (1 - \delta) \mu) &< \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^u \\
 P(X < (1 - \delta) \mu) &< \exp\left(\frac{-\mu\delta^2}{2}\right) \\
