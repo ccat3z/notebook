@@ -146,6 +146,12 @@ $\Lambda$是特征值对角矩阵.
 
 ### Cholesky分解
 
+::: {.define latex=true}
+对于对称正定矩阵$A$, $A = G G^T$, $G$为下三角矩阵.
+成为**`#Cholesky分解`**
+若把对角元素提取出来, 即$A = L D L^T$分解, 称为**`#不带平方根的Cholesky分解`**
+:::
+
 ``` {=latex}
 \begin{problem}
 求对称正定矩阵
@@ -206,6 +212,30 @@ $$
 \end{solution}
 ```
 
-## 奇异值分解
+## 奇异值分解 (SVD)
 
-<!-- Lec 13 -->
+::: {.define latex=true}
+$A \in \mathbb{R}^{m \times n}的$**`#SVD分解`**: $A = U \Sigma V^T$,
+
+* $U \in \mathbb{R}^{m \times m}$是$AA^T$的标准化特征向量
+* $\Sigma \in \mathbb{R}^{m \times n}$是$A^TA$的特征值的根号值
+* $V \in \mathbb{R}^{n \times n}$是$A^TA$的标准化特征向量
+:::
+
+## 矩阵分解应用
+
+
+### 线性方程组
+
+$Ax = b$
+
+* Cholesky法: $A = GG^T$, $Gb = d$, $G^T x = b$
+
+### 最小二乘问题
+
+::: {.define latex=true}
+**`#最小二乘问题`**: $\min_x ||Ax - b||_2$
+:::
+
+* 正则化方法: 求解$A^T A x = A^T b$
+* QR法: $A = QR$, $Rx = Q^T b$

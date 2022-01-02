@@ -53,6 +53,11 @@ $A$的行向量和列向量均为单位矩阵.
 
 TODO: Lec 9
 
+::: {.mthm latex=true}
+* 行满秩矩阵$A$, $AA^T$可逆
+* 列满秩矩阵$A$, $A^T A$可逆
+:::
+
 ## 向量空间
 
 <!-- Lec3 -->
@@ -518,7 +523,7 @@ $l_\infty = \max_j |x_i|$
 
 * **$l_1$范数**: $||A||_{m_1} = \sum_{i=1}^m \sum_{j=1}^{n} |a_{ij}|$
 * **$l_2$范数**, **`#Fiobenius范数`**:
-  $||A||_{F} = (\sum_{i=1}^m \sum_{j=1}^{n} |a_{ij}|^2)^\frac{1}{2}$
+  $||A||_{F} = (\sum_{i=1}^m \sum_{j=1}^{n} |a_{ij}|^2)^\frac{1}{2} = (Tr(A^T A))^\frac{1}{2}$
 * **$l_\infty$范数** (广义): $||A||_{m_\infty} = \max |a_{ij}|$
 :::
 
@@ -539,4 +544,60 @@ $||A|| = \max \{ ||Ax||_v : ||x||_v = 1 \}$
 * `#1范数`: $||A||_1 = \max_{1 \le j \le n} \sum_{i=1}^m |a_{ij}|$, 列向量的$l_1$范数最大值
 * `#∞范数`: $||A||_\infty = \max_{1 \le i \le m} \sum_{j=1}^n |a_{ij}|$, 行向量的$l_1$范数最大值
 * `#2范数`: $||A||_2 = \sqrt{\lambda_{max} (A^T A)}$
+:::
+
+### 例题
+
+::: {.example}
+求证：$\mathbb{R}^n$上的一范数$||\cdot||_1$和二范数$||\cdot||_2$是等价的，
+即存在$c_1$, $c_2$满足不等式$c_1 ||x||_1 \le ||x||_2 \le c_2 ||x||_1$
+
+\begin{align*}
+x_1^2 + x_2^2 + \ldots + x_n^2 &\le (|x_1| + |x_2| + \ldots + |x_n|)^2 \\
+||x||_2 &\le ||x||_1 \\
+&\Rightarrow c_2 = 1
+\end{align*}
+
+\begin{align*}
+\frac{x_1^2 + x_2^2 + \ldots + x_n^2}{n} &\ge \frac{(|x_1| + |x_2| + \ldots + |x_n|)^2}{n^2} \\
+n(n_1^2 + x_2^2 + \ldots + x_n^2) &\ge (|x_1| + |x_2| + \ldots + |x_n|)^2 \\
+\sqrt{2} ||x||_2 &\ge ||x||_1 \\
+&\Rightarrow c_1 = \frac{1}{\sqrt{n}}
+\end{align*}
+:::
+
+::: {.example}
+求证：通过向量范数$||\cdot||_1$诱导得到的矩阵范数$||\cdot||_1$
+和向量范数$||\cdot||_1$是相容的，即对任意的$A \in \mathbb{R}^{n \times n}$,
+$x \in \mathbb{R}^n$有$||Ax||_1 \le ||A||_1 ||x||_1$
+
+\begin{align*}
+||Ax||_1 &= \sum_{i=1}^{n} |a_{i1}x_1 + a_{i2}x_2 + \ldots + a_{in}x_n| \\
+&\le \sum_{i=1}^{n} |a_{i1}x_1| + |a_{i2}x_2| + \ldots + |a_{in}x_n| \\
+&= \sum_{j=1}^{n} |x_j| ||a_j||_1 \\
+&\le \sum_{j=1}^{n} |x_j| \max_{1 \le k \le n} ||a_k||_1 \\
+&= ||x||_1 ||A||_1
+\end{align*}
+:::
+
+::: {.example}
+证明柯西-施瓦茨不等式$\langle x, y \rangle \le ||x||_2 ||y||_2$
+
+当$y = 0$显然成立.
+
+当$y \not= 0$, 对于任意$\lambda \in \mathbb{R}$
+
+\begin{align*}
+0 &\le \langle x - \lambda y, x - \lambda y \rangle \\
+&= \langle x - \lambda y, x \rangle - \lambda \langle x - \lambda y, y \rangle \\
+&= \langle x, x \rangle - 2 \lambda \langle x, y \rangle + \lambda^2 \langle y, y \rangle
+\end{align*}
+
+取$\lambda = \langle x, y \rangle \langle y, y \rangle^{-1}$
+
+\begin{align*}
+\langle x, y \rangle^2 \langle y, y \rangle^{-1} &\le \langle x, x \rangle \\
+\langle x, y \rangle^2 &\le ||x||^2 ||y||^  2
+\end{align*}
+
 :::
