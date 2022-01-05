@@ -33,6 +33,56 @@ $c_i$为存入的元元素个数.
 
 多个Basic Count Sketch取中位数
 
+#### 例题
+
+::: {.example}
+证明$\bar{f_a} = \text{median}_{1 \le i \le t} g_i(a) C[i] [h_i (a)]$中$t = O(log(1/\delta))$
+
+``` {=latex}
+$E(\bar{f_a}) = f_a$, $Var(\bar{f_a}) = \frac{||f_{-a}||_2^2}{k}$
+
+$
+P(|\bar{f_a} - f_a| \ge \epsilon ||f||_2)
+\le P(|\bar{f_a} - f_a| \ge \epsilon ||f_{-a}||_2)
+\le \frac{Var(\bar{f_a})}{\epsilon^2 ||f_{-a}||_2^2}
+= \frac{1}{k \epsilon^2}
+$
+
+令$\frac{1}{k\epsilon^2} = \frac{1}{3}$, 定义:
+
+\[
+    Y_i = \begin{cases}
+        1 & |\bar{f_a} - f_a| \ge \epsilon ||f||_2 \\
+        0
+    \end{cases}
+\]
+
+则有$P(Y_i = 1) \le \frac{1}{3}$, 记$\mu = E(\sum_{i=1}^{t} Y_i) \le \frac{t}{3}$
+
+$P(\sum_{i=1}^{t} Y_i > \frac{t}{2}) \le P(\sum_{i=1}^{t} Y_i > (1 + \frac{1}{2}) \mu) \le exp(-\frac{\mu}{16}) < \delta$
+
+$exp(-\frac{t}{48}) \le exp(-\frac{\mu}{16}) < \delta$
+```
+:::
+
+::: {.example}
+$\bar{f_a} = \frac{g_i(a) C[i] [h_i (a)]}{t}$, 分析性能
+
+``` {=latex}
+$Var(\bar{f_a}) = \frac{||f_{-a}||_2^2}{tk}$
+
+$
+P(|\bar{f_a} - f_a| \ge \epsilon ||f||_2)
+\le P(|\bar{f_a} - f_a| \ge \epsilon ||f_{-a}||_2)
+\le \frac{Var(\bar{f_a})}{\epsilon^2 ||f_{-a}||_2^2}
+= \frac{1}{t k \epsilon^2} < \delta
+$
+
+因此$t = O(\frac{1}{\epsilon^2 \delta})$
+```
+:::
+
 ### Count-min Sketch
 
-Count Sketch基础上, 改为取最小值, 只增
+Count Sketch基础上, 改为取最小值, 只增.
+计数器个数: $O(\log(1/\delta) / \epsilon)$

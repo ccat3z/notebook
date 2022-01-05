@@ -101,3 +101,8 @@ Q &= \frac{1}{4m} s^T B s \\
 \end{align*}
 \end{enumerate}
 \end{solution}
+
+## 社区发现算法
+
+1. 谱方法
+1. Louvain

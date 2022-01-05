@@ -57,8 +57,8 @@ $X$二项分布
 \begin{align*}
 P(X < (1 - \delta) \mu) &< \left(\frac{e^{-\delta}}{(1-\delta)^{(1-\delta)}}\right)^u \\
 P(X < (1 - \delta) \mu) &< \exp\left(\frac{-\mu\delta^2}{2}\right) \\
-P(X < (1 + \delta) \mu) &< \left(\frac{e^{\delta}}{(1+\delta)^{(1+\delta)}}\right)^u \\
-P(X < (1 + \delta) \mu) &< \exp\left(\frac{-\mu\delta^2}{4}\right)
+P(X > (1 + \delta) \mu) &< \left(\frac{e^{\delta}}{(1+\delta)^{(1+\delta)}}\right)^u \\
+P(X > (1 + \delta) \mu) &< \exp\left(\frac{-\mu\delta^2}{4}\right)
 \end{align*}
 :::
 
