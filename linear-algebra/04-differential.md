@@ -16,3 +16,7 @@
 
 如果$|X| > 0$, $\frac{\partial |X|}{\partial X} = |X| X^{-T}$
 :::
+
+::: {.mthm latex=true}
+逆矩阵求导: $\mathrm{d} X^{-1} = - X^{-1} \mathrm{d} X X^{-1}$
+:::

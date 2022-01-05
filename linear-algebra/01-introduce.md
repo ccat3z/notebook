@@ -561,7 +561,7 @@ x_1^2 + x_2^2 + \ldots + x_n^2 &\le (|x_1| + |x_2| + \ldots + |x_n|)^2 \\
 \begin{align*}
 \frac{x_1^2 + x_2^2 + \ldots + x_n^2}{n} &\ge \frac{(|x_1| + |x_2| + \ldots + |x_n|)^2}{n^2} \\
 n(n_1^2 + x_2^2 + \ldots + x_n^2) &\ge (|x_1| + |x_2| + \ldots + |x_n|)^2 \\
-\sqrt{2} ||x||_2 &\ge ||x||_1 \\
+\sqrt{n} ||x||_2 &\ge ||x||_1 \\
 &\Rightarrow c_1 = \frac{1}{\sqrt{n}}
 \end{align*}
 :::

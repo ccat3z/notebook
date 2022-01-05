@@ -151,8 +151,9 @@ L(X, \Lambda) &= \frac{1}{2} ||X||^2_F - \Lambda^T (AX - B) \\
 因为$p < q \Rightarrow rank(A) = p$, 所以$AA^T$可逆。
 
 \begin{align*}
-    A X &= B \\
-    A X &= (A A^T) (A A^T)^{-1} B \\
+    X &= A^T\Lambda \\
+    A X &= A A^T \Lambda \\
+    B &= A A^T \Lambda \\
     X &= A^T (A A^T)^{-1} B
 \end{align*}
 \end{solution}
